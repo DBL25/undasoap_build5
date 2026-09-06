@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HERO_WORDS } from '../data/products';
 import { ShieldCheck, Sparkles, Flame, Droplets, CheckCircle2 } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
@@ -9,12 +9,13 @@ interface HeroProps {
   onQuizClick: () => void;
 }
 
-const UPLOADED_HERO_IMAGE = '/hf_20260829_133814_9513ed18-4db9-49c3-88a1-675bf20ed8f1.png';
+const HERO_VIDEO = '/videos/unda-hero-bkgd.mp4';
 
 export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
   const [wordIndex, setWordIndex] = useState(0);
   const [fadeState, setFadeState] = useState(true);
-  const [heroImageSrc, setHeroImageSrc] = useState(UPLOADED_HERO_IMAGE);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Fisher-Yates shuffled list of words with 'something' first
   const [words] = useState(() => {
@@ -38,20 +39,43 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
     return () => clearInterval(interval);
   }, [words.length]);
 
+  // Some mobile browsers ignore the autoplay attribute; nudge playback once mounted
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const play = video.play();
+    if (play) {
+      play.catch(() => {
+        /* autoplay blocked — the poster image stays visible */
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-end bg-[#0a0a0a] overflow-hidden border-b-4 border-black">
-      {/* Background Graphic & Texture using uploaded asset image without alteration */}
-      <img
-        src={heroImageSrc}
-        alt="UNDA Workshop Washup with Activated Charcoal Bar"
-        className="absolute inset-0 w-full h-full object-cover object-center sm:object-[center_35%] opacity-80 photo-grit scale-105 transition-transform duration-10000 block"
-        referrerPolicy="no-referrer"
-        onError={() => {
-          if (heroImageSrc !== fallbackHeroBg) {
-            setHeroImageSrc(fallbackHeroBg);
-          }
-        }}
-      />
+      {/* Background: looping, muted, autoplaying video with a still-image fallback */}
+      {videoFailed ? (
+        <img
+          src={fallbackHeroBg}
+          alt="UNDA Workshop Washup with Activated Charcoal Bar"
+          className="absolute inset-0 w-full h-full object-cover object-center sm:object-[center_35%] opacity-80 photo-grit scale-105 block"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover object-center sm:object-[center_35%] opacity-80 photo-grit scale-105 block"
+          src={HERO_VIDEO}
+          poster={fallbackHeroBg}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          aria-hidden="true"
+          onError={() => setVideoFailed(true)}
+        />
+      )}
 
       {/* Industrial Gradients for Text Legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30 pointer-events-none" />
