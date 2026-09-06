@@ -1,0 +1,6 @@
+{
+  "name": "UNDA Handmade Soap Store",
+  "description": "A rugged handmade soap store for tough work, featuring product categorization, customer reviews, cart drawer, and secure checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
