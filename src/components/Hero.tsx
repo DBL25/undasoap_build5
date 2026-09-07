@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { HERO_WORDS } from '../data/products';
-import { ShieldCheck, Sparkles, Flame, Droplets, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Flame, Droplets, CheckCircle2 } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
 import fallbackHeroBg from '../assets/images/hero_background_1787506779381.jpg';
 
@@ -145,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
           </div>
 
           {/* Key Value Trust Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/15">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/15">
             <div className="flex items-center gap-2.5 text-white/90">
               <CheckCircle2 className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
               <span className="text-xs font-bold uppercase tracking-wider">Raw Goat Milk Base</span>
@@ -157,10 +157,6 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
             <div className="flex items-center gap-2.5 text-white/90">
               <Droplets className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
               <span className="text-xs font-bold uppercase tracking-wider">Zero Sulfates & Goop</span>
-            </div>
-            <div className="flex items-center gap-2.5 text-white/90">
-              <ShieldCheck className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">100% Grime Guarantee</span>
             </div>
           </div>
 
