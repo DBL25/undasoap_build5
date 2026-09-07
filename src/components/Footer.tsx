@@ -181,9 +181,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
                 Free Shipping on Orders $35+
               </li>
               <li className="text-neutral-400">
-                30-Day Grime Guarantee: Love it or full refund
-              </li>
-              <li className="text-neutral-400">
                 Support: crew@undasoap.com
               </li>
             </ul>

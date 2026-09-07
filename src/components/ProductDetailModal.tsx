@@ -281,7 +281,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Trust markers */}
               <div className="flex items-center justify-between text-[11px] font-bold text-neutral-500 pt-2 border-t border-neutral-200">
                 <span>✓ Free Ship Over $35</span>
-                <span>✓ 30-Day Grime Guarantee</span>
                 <span>✓ Small Batch USA</span>
               </div>
             </div>

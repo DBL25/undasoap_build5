@@ -13,6 +13,9 @@ interface RoutineBuilderModalProps {
   onQuickView?: (product: Product) => void;
 }
 
+// Every subscription resupplies on a fixed 6 week cadence
+const RESUPPLY_WEEKS = 6;
+
 // --- Question 1: What does the shift leave on you? ---
 interface GrimeOption {
   id: string;
@@ -128,7 +131,6 @@ interface RoutineResult {
   description: string;
   bars: BarItem[];
   packOption: ProductPackOption;
-  recommendedWeeks: 4 | 6 | 8;
   washesPerWeek: number;
 }
 
@@ -149,20 +151,10 @@ function calculateRoutine(
   const isRotating = timingId === 'rotating';
   const isDayOrSecond = timingId === 'daylight' || timingId === 'second-half';
 
-  // Calculate resupply interval based on 45 total washes across 3 bars:
-  // 7 base washes/week plus 1 extra per heavy day
+  // Wash load estimate: 7 base washes/week plus 1 extra per heavy day
   const intensityObj = INTENSITY_OPTIONS.find(i => i.id === intensityId) || INTENSITY_OPTIONS[0];
   const extraWashes = intensityObj.heavyDays;
   const washesPerWeek = 7 + extraWashes;
-
-  let recommendedWeeks: 4 | 6 | 8 = 6;
-  if (intensityId === 'every' || intensityId === 'most') {
-    recommendedWeeks = 4; // ~11 to 14 washes/week = ~3.2 to 4.1 weeks
-  } else if (grimeId === 'sweat' && intensityId === 'couple') {
-    recommendedWeeks = 8; // light load = ~6.4 to 8 weeks
-  } else {
-    recommendedWeeks = 6; // 9 washes/week = ~5 weeks
-  }
 
   // 1. Nights + (heavy grime or Every Damn Day): 2x Graveyard + 1x Recharge — "The Graveyard Rotation"
   if (isNights && (isHeavyGrime || isEveryDamnDay)) {
@@ -184,7 +176,6 @@ function calculateRoutine(
         unitPrice: 9.33,
         badge: 'Custom Mix'
       },
-      recommendedWeeks,
       washesPerWeek
     };
   }
@@ -210,7 +201,6 @@ function calculateRoutine(
         unitPrice: 9.33,
         badge: 'Custom Mix'
       },
-      recommendedWeeks,
       washesPerWeek
     };
   }
@@ -236,7 +226,6 @@ function calculateRoutine(
         unitPrice: 9.33,
         badge: 'Custom Mix'
       },
-      recommendedWeeks,
       washesPerWeek
     };
   }
@@ -261,7 +250,6 @@ function calculateRoutine(
         unitPrice: 9.33,
         badge: 'Custom Mix'
       },
-      recommendedWeeks,
       washesPerWeek
     };
   }
@@ -285,7 +273,6 @@ function calculateRoutine(
       unitPrice: 9.33,
       badge: 'Custom Mix'
     },
-    recommendedWeeks,
     washesPerWeek
   };
 }
@@ -300,7 +287,6 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
   const [intensityId, setIntensityId] = useState<string>('most');
   const [timingId, setTimingId] = useState<string>('daylight');
   const [isSubscription, setIsSubscription] = useState<boolean>(true);
-  const [selectedInterval, setSelectedInterval] = useState<4 | 6 | 8>(4);
   const [result, setResult] = useState<RoutineResult | null>(null);
 
   const rotationProduct = products.find(p => p.id === 'the-rotation') || products[0];
@@ -309,7 +295,6 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
   const handleCalculate = () => {
     const computed = calculateRoutine(products, grimeId, intensityId, timingId);
     setResult(computed);
-    setSelectedInterval(computed.recommendedWeeks);
     setStep(4);
   };
 
@@ -644,30 +629,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                         </span>
                       </div>
                       <div className="text-[11px] text-neutral-600 mt-0.5 font-medium">
-                        Resupply interval based on your answers: <strong>every {selectedInterval} weeks</strong> (45 total washes per 3 bars).
-                      </div>
-                      
-                      {/* Interval selector buttons */}
-                      <div className="flex items-center gap-1.5 mt-2">
-                        <span className="text-[10px] font-mono uppercase text-neutral-500 font-bold">Resupply every:</span>
-                        {[4, 6, 8].map((wk) => (
-                          <button
-                            key={wk}
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedInterval(wk as 4 | 6 | 8);
-                              setIsSubscription(true);
-                            }}
-                            className={`px-2 py-0.5 text-[10px] font-mono font-bold border transition-colors cursor-pointer ${
-                              selectedInterval === wk && isSubscription
-                                ? 'bg-black text-white border-black'
-                                : 'bg-white text-neutral-700 border-neutral-300 hover:border-black'
-                            }`}
-                          >
-                            {wk} WEEKS
-                          </button>
-                        ))}
+                        Resupply ships <strong>every {RESUPPLY_WEEKS} weeks</strong> (45 total washes per 3 bars). Cancel anytime.
                       </div>
                     </div>
                   </div>

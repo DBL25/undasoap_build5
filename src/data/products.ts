@@ -18,6 +18,12 @@ import graveyardBarLifestyle from '../assets/images/Graveyard-lifestyle.png';
 import graveyardBarSide from '../assets/images/Graveyard-side.png';
 import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
 
+// The Rotation gallery
+import theRotationMainImg from '../assets/images/Rotation-main.png';
+import theRotationLifestyle from '../assets/images/Rotation-lifestyle.png';
+import theRotationSide from '../assets/images/Rotation-side.png';
+import theRotationMacro from '../assets/images/Rotation-macro.png';
+
 // Bundles & accessories
 import theRotationImg from '../assets/images/the_rotation_bundle_1787832036701.jpg';
 import theRotationKitImg from '../assets/images/the_rotation_kit_bundle_1787832485903.jpg';
@@ -100,8 +106,9 @@ export const PRODUCTS: Product[] = [
     ribbon: 'Save $10',
     gritLevel: 5,
     gritDescription: 'Complete 3-Bar Lineup (Reset, Recharge & Graveyard)',
-    image: theRotationImg,
-    secondaryImage: graveyardBarImg,
+    image: theRotationMainImg,
+    secondaryImage: theRotationLifestyle,
+    gallery: [theRotationMainImg, theRotationLifestyle, theRotationSide, theRotationMacro],
     description: 'Reset. Recharge. Graveyard. The full lineup for the full week — day shift, second half, and the nights nobody sees. Build your own custom 3-bar mix through Find My Routine at the same price.',
     fullDetails: 'The complete 3-bar rotation built for the entire work week. Contents: 1x The Reset (Activated charcoal top, goat’s milk base grime cutter), 1x The Recharge (Creamy goat’s milk and sea salt restorative bar), and 1x The Graveyard (Full charcoal heavy-hitter for midnight shifts). Customers can also tailor their own custom 3-bar mix via Find My Routine for the exact same $28 price. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, sea salt, food-grade lye, and refreshing eucalyptus & spearmint essential oils.',
     keyBenefits: [

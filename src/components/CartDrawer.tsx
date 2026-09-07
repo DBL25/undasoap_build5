@@ -354,8 +354,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
                   <span>256-Bit SSL Encrypted</span>
                 </span>
-                <span>•</span>
-                <span>Job Site Guarantee</span>
               </div>
 
             </div>
