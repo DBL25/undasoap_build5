@@ -27,7 +27,8 @@ import theRotationMacro from '../assets/images/Rotation-macro.png';
 // Bundles & accessories
 import theRotationImg from '../assets/images/the_rotation_bundle_1787832036701.jpg';
 import theRotationKitImg from '../assets/images/the_rotation_kit_bundle_1787832485903.jpg';
-import blackPouchImg from '../assets/images/black_fiber_pouch_1787509798063.jpg';
+import blackPouchImg from '../assets/images/Pouch-main.png';
+import blackPouchInUse from '../assets/images/Pouch-in-use.png';
 
 export const HERO_WORDS: string[] = [
   'something',
@@ -274,7 +275,8 @@ export const PRODUCTS: Product[] = [
     gritLevel: 3,
     gritDescription: 'Tactile Black Scrub Pouch Texture',
     image: blackPouchImg,
-    secondaryImage: resetBarImg,
+    secondaryImage: blackPouchInUse,
+    gallery: [blackPouchImg, blackPouchInUse],
     description: 'Slip any bar into this black woven fiber pouch for maximum grip, explosive foam, and easy hang-dry shower storage.',
     fullDetails: 'Woven from rugged textured black plant fibers. Delivers industrial traction so wet soap never slips out of oily or soapy hands. Collects every last sliver of soap and hangs dry between shifts.',
     keyBenefits: [
