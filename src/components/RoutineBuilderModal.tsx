@@ -172,8 +172,8 @@ function calculateRoutine(
         id: 'custom-graveyard-2x-1x',
         name: 'The Rotation (The Graveyard Rotation: 2x Graveyard + 1x Recharge)',
         count: 3,
-        price: 28,
-        unitPrice: 9.33,
+        price: 32,
+        unitPrice: 10.67,
         badge: 'Custom Mix'
       },
       washesPerWeek
@@ -197,8 +197,8 @@ function calculateRoutine(
         id: 'custom-graveyard-balanced',
         name: 'The Rotation (The Graveyard Rotation: 1x Graveyard + 1x Reset + 1x Recharge)',
         count: 3,
-        price: 28,
-        unitPrice: 9.33,
+        price: 32,
+        unitPrice: 10.67,
         badge: 'Custom Mix'
       },
       washesPerWeek
@@ -222,8 +222,8 @@ function calculateRoutine(
         id: 'custom-mixed-shift-rotation',
         name: 'The Rotation (The Mixed Shift Rotation: 1x Reset + 1x Recharge + 1x Graveyard)',
         count: 3,
-        price: 28,
-        unitPrice: 9.33,
+        price: 32,
+        unitPrice: 10.67,
         badge: 'Custom Mix'
       },
       washesPerWeek
@@ -246,8 +246,8 @@ function calculateRoutine(
         id: 'custom-heavy-week-rotation',
         name: 'The Rotation (The Heavy Week Rotation: 2x Reset + 1x Recharge)',
         count: 3,
-        price: 28,
-        unitPrice: 9.33,
+        price: 32,
+        unitPrice: 10.67,
         badge: 'Custom Mix'
       },
       washesPerWeek
@@ -269,8 +269,8 @@ function calculateRoutine(
       id: 'custom-steady-rotation',
       name: 'The Rotation (The Steady Rotation: 1x Reset + 2x Recharge)',
       count: 3,
-      price: 28,
-      unitPrice: 9.33,
+      price: 32,
+      unitPrice: 10.67,
       badge: 'Custom Mix'
     },
     washesPerWeek
@@ -325,8 +325,8 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
         : 'border-neutral-300 bg-neutral-50 text-black hover:border-black hover:bg-white'
     }`;
 
-  const finalSubPrice = 23.80; // 15% off $28
-  const oneTimePrice = 28.00;
+  const finalSubPrice = 27.20; // 15% off $32
+  const oneTimePrice = 32.00;
 
   return (
     <div
@@ -547,9 +547,9 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                   </div>
                 </div>
                 <div className="sm:text-right border-t sm:border-t-0 pt-2 sm:pt-0 border-neutral-800">
-                  <div className="text-3xl font-black font-display text-[#c69a5f]">$28</div>
+                  <div className="text-3xl font-black font-display text-[#c69a5f]">$32</div>
                   <div className="text-[11px] font-mono uppercase text-neutral-400 font-bold">Your Rotation</div>
-                  <div className="text-[10px] font-mono text-[#c69a5f] mt-1">$7 away from free shipping</div>
+                  <div className="text-[10px] font-mono text-[#c69a5f] mt-1">$3 away from free shipping</div>
                 </div>
               </div>
 
@@ -657,7 +657,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                     />
                     <div>
                       <div className="text-xs uppercase font-black text-black">
-                        One-Time ($28)
+                        One-Time ($32)
                       </div>
                       <div className="text-[10px] text-neutral-500 font-medium">
                         Single shipment of your 3-bar rotation.
@@ -670,7 +670,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                 </label>
               </div>
 
-              {/* Action Button: Start My Rotation / One-Time ($28) */}
+              {/* Action Button: Start My Rotation / One-Time ($32) */}
               <div className="space-y-3">
                 <button
                   onClick={handleAddRotation}
@@ -681,7 +681,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                   {isSubscription ? (
                     <span>Start My Rotation • Save 15% — ${finalSubPrice.toFixed(2)}</span>
                   ) : (
-                    <span>One-Time ($28) — Add To Cart</span>
+                    <span>One-Time ($32) — Add To Cart</span>
                   )}
                 </button>
 

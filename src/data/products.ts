@@ -102,20 +102,20 @@ export const PRODUCTS: Product[] = [
     tagline: 'Every bar. Every shift.',
     category: 'bundles',
     categoryLabel: 'Featured Bundle',
-    price: 28,
+    price: 32,
     weight: '3 x 4.2 oz Bars (12.6 oz Total)',
-    ribbon: 'Save $10',
+    ribbon: 'Save $6',
     gritLevel: 5,
     gritDescription: 'Complete 3-Bar Lineup (Reset, Recharge & Graveyard)',
     image: theRotationMainImg,
     secondaryImage: theRotationLifestyle,
     gallery: [theRotationMainImg, theRotationLifestyle, theRotationSide, theRotationMacro],
     description: 'Reset. Recharge. Graveyard. The full lineup for the full week — day shift, second half, and the nights nobody sees. Build your own custom 3-bar mix through Find My Routine at the same price.',
-    fullDetails: 'The complete 3-bar rotation built for the entire work week. Contents: 1x The Reset (Activated charcoal top, goat’s milk base grime cutter), 1x The Recharge (Creamy goat’s milk and sea salt restorative bar), and 1x The Graveyard (Full charcoal heavy-hitter for midnight shifts). Customers can also tailor their own custom 3-bar mix via Find My Routine for the exact same $28 price. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, sea salt, food-grade lye, and refreshing eucalyptus & spearmint essential oils.',
+    fullDetails: 'The complete 3-bar rotation built for the entire work week. Contents: 1x The Reset (Activated charcoal top, goat’s milk base grime cutter), 1x The Recharge (Creamy goat’s milk and sea salt restorative bar), and 1x The Graveyard (Full charcoal heavy-hitter for midnight shifts). Customers can also tailor their own custom 3-bar mix via Find My Routine for the exact same $32 price. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, sea salt, food-grade lye, and refreshing eucalyptus & spearmint essential oils.',
     keyBenefits: [
       'Contents: The Reset, The Recharge, and The Graveyard (3 full-size bars)',
       'Covers every shift: Day shift recovery, grime strip, and full charcoal cut',
-      'Instant $10 savings compared to buying individual bars ($38 value)',
+      'Instant $6 savings compared to buying individual bars ($38 value)',
       'Customizable 3-bar mix option available through Find My Routine',
       'Handmade with farm-fresh goat’s milk, activated charcoal & sea salt'
     ],
@@ -132,8 +132,46 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     featured: true,
     packOptions: [
-      { id: 'single-rotation', name: '1x The Rotation (3 Bars)', count: 1, price: 28, unitPrice: 28, badge: 'Save $10' },
-      { id: 'double-rotation', name: '2x The Rotation (6 Bars Total)', count: 2, price: 56, unitPrice: 28, badge: 'Save $20', savingsPercent: 26 }
+      { id: 'single-rotation', name: '1x The Rotation (3 Bars)', count: 1, price: 32, unitPrice: 32, badge: 'Save $6' },
+      { id: 'double-rotation', name: '2x The Rotation (6 Bars Total)', count: 2, price: 60, unitPrice: 30, badge: 'Save $16', savingsPercent: 21 }
+    ]
+  },
+  {
+    id: 'the-cycle',
+    name: 'The Cycle',
+    tagline: '1x Reset + 1x Recharge',
+    category: 'bundles',
+    categoryLabel: 'Entry Bundle',
+    price: 24,
+    weight: '2 x 4.2 oz Bars (8.4 oz Total)',
+    ribbon: 'Start Here',
+    gritLevel: 4,
+    gritDescription: 'The Original Pair (Reset & Recharge)',
+    image: resetBarImg,
+    secondaryImage: rechargeBarImg,
+    description: 'Grind. Reset. Recharge. Repeat. The Cycle is the pair the manifesto is named after — the grime cutter and the daily restorer, together. The place to start before you ever need The Graveyard.',
+    fullDetails: 'The original two-bar pair, fixed and not swappable: 1x The Reset (activated charcoal top, goat’s milk base grime cutter) and 1x The Recharge (creamy goat’s milk and sea salt daily restorer). These are the two bars named directly in the UNDA manifesto — Grind, Reset, Recharge, Repeat — and this bundle is built to be the entry point into that cycle before a customer ever needs the heavier Graveyard bar. Handmade cold-process soap with farm-fresh goat’s milk, activated charcoal, sea salt, food-grade lye, and eucalyptus & spearmint essential oils.',
+    keyBenefits: [
+      'Contents: 1x The Reset, 1x The Recharge — fixed pair, not customizable',
+      'The two bars the manifesto is literally named after',
+      'The natural starting point before The Rotation or The Graveyard',
+      'Covers daily grime-cutting and daily restoration in one order',
+      'Handmade with farm-fresh goat’s milk, activated charcoal & sea salt'
+    ],
+    scentNotes: ['Eucalyptus', 'Spearmint'],
+    ingredients: [
+      'The Reset Bar (Activated Charcoal, Goat’s Milk, Sea Salt, Lye, Eucalyptus & Spearmint)',
+      'The Recharge Bar (Goat’s Milk, Sea Salt, Lye, Eucalyptus & Spearmint)'
+    ],
+    tradeSuitability: ['First-Time Buyers', 'Daily Shift Crews', 'All Trades'],
+    howToUse: 'Use The Reset after heavy, dirty shifts to cut grease and grime. Use The Recharge for daily showers and lighter days. Rotate between the two as the week demands.',
+    rating: 4.96,
+    reviewCount: 0,
+    inStock: true,
+    featured: true,
+    packOptions: [
+      { id: 'single-cycle', name: '1x The Cycle (2 Bars)', count: 1, price: 24, unitPrice: 24 },
+      { id: 'double-cycle', name: '2x The Cycle (4 Bars Total)', count: 2, price: 46, unitPrice: 23, badge: 'Save $2', savingsPercent: 4 }
     ]
   },
   {
