@@ -26,7 +26,15 @@ export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('unda_cart_v1');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: CartItem[] = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          return parsed.flatMap((item) => {
+            const currentProduct = PRODUCTS.find((product) => product.id === item.product?.id);
+            return currentProduct ? [{ ...item, product: currentProduct }] : [];
+          });
+        }
+      }
     } catch (e) {
       console.error(e);
     }
@@ -118,6 +126,12 @@ export default function App() {
 
   // Cart operations
   const handleAddToCart = (product: Product, pack: ProductPackOption, isSubscription?: boolean) => {
+    const currentProduct = PRODUCTS.find((catalogProduct) => catalogProduct.id === product.id);
+    if (!currentProduct) {
+      triggerToast('That item is no longer available separately.');
+      return;
+    }
+
     const itemKey = `${product.id}-${pack.id}${isSubscription ? '-sub' : ''}`;
 
     setCartItems((prevItems) => {
@@ -134,7 +148,7 @@ export default function App() {
           ...prevItems,
           {
             id: itemKey,
-            product,
+            product: currentProduct,
             selectedPack: pack,
             quantity: 1,
             isSubscription: Boolean(isSubscription),
@@ -263,10 +277,8 @@ export default function App() {
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         items={cartItems}
-        products={PRODUCTS}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
-        onAddToCart={handleAddToCart}
         onProceedToCheckout={handleProceedToCheckout}
       />
 

@@ -199,10 +199,10 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
         <div className="mb-6 flex items-center justify-between pb-3 border-b-2 border-neutral-200">
           <div>
             <span className="text-[11px] font-mono font-black uppercase text-[#a97e45] tracking-widest block">
-              Individual Cold-Processed Bars & Gear
+              Cold-Processed Bars & Bundles
             </span>
             <h3 className="text-lg sm:text-xl font-display font-black text-black uppercase">
-              Full Workshop Lineup ({sortedProducts.length} Items)
+              Full Soap Lineup ({sortedProducts.length} Items)
             </h3>
           </div>
           <span className="text-xs font-mono font-bold text-neutral-500 hidden sm:inline">
