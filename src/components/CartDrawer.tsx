@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CartItem, Product, ProductPackOption } from '../types';
+import { CartItem } from '../types';
 import { PROMO_CODES } from '../data/reviews';
 import { X, Trash2, Plus, Minus, ShieldCheck, ArrowRight, Sparkles, Tag, Check, ShoppingBag, Truck } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
@@ -8,10 +8,8 @@ interface CartDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   items: CartItem[];
-  products: Product[];
   onUpdateQuantity: (itemId: string, newQuantity: number) => void;
   onRemoveItem: (itemId: string) => void;
-  onAddToCart: (product: Product, pack: ProductPackOption) => void;
   onProceedToCheckout: (appliedPromo?: string, discountAmount?: number) => void;
 }
 
@@ -19,10 +17,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   isOpen,
   onClose,
   items,
-  products,
   onUpdateQuantity,
   onRemoveItem,
-  onAddToCart,
   onProceedToCheckout,
 }) => {
   const [promoInput, setPromoInput] = useState('');
@@ -70,9 +66,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     setAppliedPromo(null);
     setPromoError('');
   };
-
-  // Workshop quick add-on suggestion (e.g. Sisal Pouch)
-  const addOnSuggestion = products.find(p => p.id === 'sisal-soap-saver-pouch');
 
   if (!isOpen) return null;
 
@@ -238,29 +231,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               })
             )}
 
-            {/* Workshop Addon Suggestion */}
-            {items.length > 0 && addOnSuggestion && !items.some(i => i.product.id === addOnSuggestion.id) && (
-              <div className="p-3.5 bg-neutral-900 border border-[#c69a5f]/40 flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <img
-                    src={addOnSuggestion.image}
-                    alt={addOnSuggestion.name}
-                    className="w-12 h-12 object-cover border border-white/20 flex-shrink-0"
-                  />
-                  <div className="truncate">
-                    <div className="text-[10px] text-[#c69a5f] font-mono uppercase font-bold">Addon Recommendation</div>
-                    <div className="text-xs font-bold text-white truncate">{addOnSuggestion.name}</div>
-                    <div className="text-xs font-black text-white">${addOnSuggestion.price}</div>
-                  </div>
-                </div>
-                <button
-                  onClick={() => onAddToCart(addOnSuggestion, addOnSuggestion.packOptions[0])}
-                  className="bg-[#c69a5f] text-black text-[10px] font-black uppercase px-3 py-2 border border-black hover:bg-white flex-shrink-0 cursor-pointer"
-                >
-                  + Add (${addOnSuggestion.price})
-                </button>
-              </div>
-            )}
           </div>
 
           {/* Drawer Footer / Checkout Summary */}

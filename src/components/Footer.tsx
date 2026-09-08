@@ -132,11 +132,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
                   The Recharge ($12)
                 </button>
               </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  Black Fiber Mesh Pouch ($6)
-                </button>
-              </li>
             </ul>
           </div>
 
