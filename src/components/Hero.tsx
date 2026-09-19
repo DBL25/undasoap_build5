@@ -131,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
               id="hero-shop-btn"
               className="bg-[#c69a5f] hover:bg-white text-black px-8 py-5 text-sm sm:text-base font-black uppercase tracking-widest border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer hover:translate-x-[-2px] hover:translate-y-[-2px]"
             >
-              Shop The Full Shift — $44
+              Shop The Full Shift — $38
             </button>
 
             <button
@@ -156,11 +156,11 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
             </div>
             <div className="flex items-center gap-2.5 text-white/90">
               <Droplets className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">Zero Sulfates & Goop</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Cold-Process Method</span>
             </div>
             <div className="flex items-center gap-2.5 text-white/90">
               <ShieldCheck className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">100% Grime Guarantee</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Same Underneath</span>
             </div>
           </div>
 

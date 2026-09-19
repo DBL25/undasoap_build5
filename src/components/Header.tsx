@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Search, Sparkles, Truck, ShieldCheck, Menu, X } from 'lucide-react';
+import { ShoppingBag, Sparkles, Menu, X } from 'lucide-react';
 import { CartItem } from '../types';
 import { UndaLogo } from './UndaLogo';
 
@@ -7,7 +7,6 @@ interface HeaderProps {
   cartItems: CartItem[];
   onOpenCart: () => void;
   onOpenQuiz: () => void;
-  onOpenOrderLookup: () => void;
   activeSection: string;
 }
 
@@ -15,7 +14,6 @@ export const Header: React.FC<HeaderProps> = ({
   cartItems,
   onOpenCart,
   onOpenQuiz,
-  onOpenOrderLookup,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -78,12 +76,6 @@ export const Header: React.FC<HeaderProps> = ({
               The Grind
             </button>
             <button
-              onClick={() => scrollToSection('reviews')}
-              className="text-xs font-extrabold uppercase tracking-widest text-neutral-300 hover:text-[#c69a5f] transition-colors cursor-pointer py-2"
-            >
-              Reviews
-            </button>
-            <button
               onClick={onOpenQuiz}
               className="text-xs font-extrabold uppercase tracking-widest text-[#c69a5f] hover:text-white flex items-center gap-1.5 bg-[#c69a5f]/15 hover:bg-[#c69a5f]/30 px-3.5 py-2 border border-[#c69a5f]/50 transition-colors cursor-pointer"
             >
@@ -94,16 +86,6 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenOrderLookup}
-              className="hidden sm:flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition-colors px-2.5 py-1.5 border border-white/20 hover:border-white/40 cursor-pointer"
-              title="Track Existing Order"
-              id="track-order-btn"
-            >
-              <Truck className="w-3.5 h-3.5 text-[#c69a5f]" />
-              <span>Track Order</span>
-            </button>
-
             {/* Cart Button */}
             <button
               onClick={onOpenCart}
@@ -144,12 +126,6 @@ export const Header: React.FC<HeaderProps> = ({
             className="block w-full text-left py-2 font-display uppercase text-lg text-white hover:text-[#c69a5f]"
           >
             The Grind Method
-          </button>
-          <button
-            onClick={() => scrollToSection('reviews')}
-            className="block w-full text-left py-2 font-display uppercase text-lg text-white hover:text-[#c69a5f]"
-          >
-            Tradesmen Reviews
           </button>
           <button
             onClick={() => {

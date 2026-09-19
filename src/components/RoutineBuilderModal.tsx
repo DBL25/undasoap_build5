@@ -9,7 +9,7 @@ import { UndaLogo } from './UndaLogo';
 interface RoutineBuilderModalProps {
   products: Product[];
   onClose: () => void;
-  onAddToCart: (product: Product, pack: ProductPackOption, isSubscription?: boolean) => void;
+  onAddToCart: (product: Product, pack: ProductPackOption) => void;
   onQuickView?: (product: Product) => void;
 }
 
@@ -174,7 +174,7 @@ function calculateRoutine(
       name: 'The Graveyard Rotation',
       mixShort: '2x Graveyard + 1x Recharge',
       tagline: 'Two full-charcoal bars for night shifts and heavy grime, one recharge bar for skin recovery.',
-      description: 'Engineered for night runs, diesel rebuilds, and shifts ending when the sun comes up. Concentrated charcoal cuts stubborn petroleum and soot, backed by goat’s milk so your skin barrier stays intact.',
+      description: 'Engineered for night runs, diesel rebuilds, and shifts ending when the sun comes up. Concentrated charcoal tackles stubborn surface grime, backed by a creamy goat’s milk lather.',
       bars,
       packOption: {
         id: 'custom-graveyard-2x-1x',
@@ -194,7 +194,7 @@ function calculateRoutine(
     const bars: BarItem[] = [
       { product: graveyardBar, qty: 1, roleNote: 'Full activated charcoal for the darkest shift grime.' },
       { product: resetBar, qty: 1, roleNote: 'Dual charcoal and goat milk bar for standard shift grit.' },
-      { product: rechargeBar, qty: 1, roleNote: 'Nourishing goat milk and sea salt to rebuild the skin barrier.' }
+      { product: rechargeBar, qty: 1, roleNote: 'Goat’s milk and sea salt for a creamy daily follow-up wash.' }
     ];
     return {
       name: 'The Graveyard Rotation',
@@ -299,8 +299,6 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
   const [grimeId, setGrimeId] = useState<string>('grease');
   const [intensityId, setIntensityId] = useState<string>('most');
   const [timingId, setTimingId] = useState<string>('daylight');
-  const [isSubscription, setIsSubscription] = useState<boolean>(true);
-  const [selectedInterval, setSelectedInterval] = useState<4 | 6 | 8>(4);
   const [result, setResult] = useState<RoutineResult | null>(null);
 
   const rotationProduct = products.find(p => p.id === 'the-rotation') || products[0];
@@ -309,7 +307,6 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
   const handleCalculate = () => {
     const computed = calculateRoutine(products, grimeId, intensityId, timingId);
     setResult(computed);
-    setSelectedInterval(computed.recommendedWeeks);
     setStep(4);
   };
 
@@ -321,14 +318,14 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
   // Add the custom rotation to cart
   const handleAddRotation = () => {
     if (!result) return;
-    onAddToCart(rotationProduct, result.packOption, isSubscription);
+    onAddToCart(rotationProduct, result.packOption);
     onClose();
   };
 
   // Add The Full Shift flagship kit to cart (from upsell row)
   const handleAddFullShift = () => {
     if (fullShiftProduct) {
-      onAddToCart(fullShiftProduct, fullShiftProduct.packOptions[0], false);
+      onAddToCart(fullShiftProduct, fullShiftProduct.packOptions[0]);
       onClose();
     }
   };
@@ -340,7 +337,6 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
         : 'border-neutral-300 bg-neutral-50 text-black hover:border-black hover:bg-white'
     }`;
 
-  const finalSubPrice = 23.80; // 15% off $28
   const oneTimePrice = 28.00;
 
   return (
@@ -617,95 +613,14 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                 </div>
               </div>
 
-              {/* Purchase Options: Subscribe & Save 15% vs One-Time */}
-              <div className="border-2 border-black bg-neutral-50 p-4 space-y-3">
-                {/* Subscribe Option */}
-                <label
-                  onClick={() => setIsSubscription(true)}
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-3 border-2 cursor-pointer transition-all gap-2 ${
-                    isSubscription
-                      ? 'bg-[#c69a5f]/15 border-black shadow-sm font-bold'
-                      : 'bg-white border-neutral-200 text-neutral-600'
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    <input
-                      type="radio"
-                      name="purchaseMode"
-                      checked={isSubscription}
-                      onChange={() => setIsSubscription(true)}
-                      className="accent-[#c69a5f] mt-1"
-                    />
-                    <div>
-                      <div className="text-xs uppercase font-black text-black flex items-center gap-2">
-                        <span>Subscribe & Save 15% — ${finalSubPrice.toFixed(2)}</span>
-                        <span className="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.2 border border-emerald-300 font-bold uppercase">
-                          Save $4.80
-                        </span>
-                      </div>
-                      <div className="text-[11px] text-neutral-600 mt-0.5 font-medium">
-                        Resupply interval based on your answers: <strong>every {selectedInterval} weeks</strong> (45 total washes per 3 bars).
-                      </div>
-                      
-                      {/* Interval selector buttons */}
-                      <div className="flex items-center gap-1.5 mt-2">
-                        <span className="text-[10px] font-mono uppercase text-neutral-500 font-bold">Resupply every:</span>
-                        {[4, 6, 8].map((wk) => (
-                          <button
-                            key={wk}
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedInterval(wk as 4 | 6 | 8);
-                              setIsSubscription(true);
-                            }}
-                            className={`px-2 py-0.5 text-[10px] font-mono font-bold border transition-colors cursor-pointer ${
-                              selectedInterval === wk && isSubscription
-                                ? 'bg-black text-white border-black'
-                                : 'bg-white text-neutral-700 border-neutral-300 hover:border-black'
-                            }`}
-                          >
-                            {wk} WEEKS
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+              <div className="border-2 border-black bg-neutral-50 p-4 space-y-2">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-xs uppercase font-black text-black">One-Time Rotation</div>
+                    <div className="text-[10px] text-neutral-500 font-medium">Single shipment of your custom three-bar mix.</div>
                   </div>
-                  <div className="sm:text-right font-black text-sm text-emerald-800 pl-7 sm:pl-0">
-                    ${finalSubPrice.toFixed(2)}
-                  </div>
-                </label>
-
-                {/* One-Time Purchase */}
-                <label
-                  onClick={() => setIsSubscription(false)}
-                  className={`flex items-center justify-between p-3 border-2 cursor-pointer transition-all ${
-                    !isSubscription
-                      ? 'bg-white border-black shadow-sm font-bold text-black'
-                      : 'bg-white border-neutral-200 text-neutral-600'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <input
-                      type="radio"
-                      name="purchaseMode"
-                      checked={!isSubscription}
-                      onChange={() => setIsSubscription(false)}
-                      className="accent-black"
-                    />
-                    <div>
-                      <div className="text-xs uppercase font-black text-black">
-                        One-Time ($28)
-                      </div>
-                      <div className="text-[10px] text-neutral-500 font-medium">
-                        Single shipment of your 3-bar rotation.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-sm font-black text-black font-display">
-                    ${oneTimePrice.toFixed(2)}
-                  </div>
-                </label>
+                  <div className="text-sm font-black text-black font-display">${oneTimePrice.toFixed(2)}</div>
+                </div>
               </div>
 
               {/* Action Button: Start My Rotation / One-Time ($28) */}
@@ -716,11 +631,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                   className="w-full bg-[#c69a5f] hover:bg-black hover:text-[#c69a5f] text-black py-4 px-6 text-sm font-black uppercase tracking-widest border-3 border-black transition-all cursor-pointer shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center gap-2"
                 >
                   <Plus className="w-4 h-4" />
-                  {isSubscription ? (
-                    <span>Start My Rotation • Save 15% — ${finalSubPrice.toFixed(2)}</span>
-                  ) : (
-                    <span>One-Time ($28) — Add To Cart</span>
-                  )}
+                  <span>One-Time ($28) — Add To Cart</span>
                 </button>
 
                 <div className="flex items-center justify-between text-xs pt-1">
@@ -739,7 +650,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                 </div>
               </div>
 
-              {/* Upsell Row: Run It Fully Equipped — The Full Shift $44 */}
+              {/* Upsell Row: Run It Fully Equipped — The Full Shift $38 */}
               <div className="p-4 bg-[#0a0a0a] text-white border-3 border-black flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-black border border-neutral-700 flex-shrink-0 overflow-hidden">
@@ -753,7 +664,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-black uppercase text-white">
-                      Run It Fully Equipped — The Full Shift $44
+                      Run It Fully Equipped — The Full Shift $38
                     </div>
                     <div className="text-[11px] text-neutral-300 font-medium leading-snug">
                       Your three bars + kit-exclusive mesh scrub pouch + manifesto card, boxed.
@@ -766,7 +677,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                   id="upsell-full-shift-btn"
                   className="w-full sm:w-auto bg-[#c69a5f] hover:bg-white text-black px-4 py-2.5 text-xs font-black uppercase tracking-wider border-2 border-black transition-colors cursor-pointer whitespace-nowrap shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]"
                 >
-                  Get The Full Shift — $44
+                  Get The Full Shift — $38
                 </button>
               </div>
 

@@ -2,18 +2,6 @@ export type ProductCategory = 'all' | 'heavy-duty' | 'daily-restore' | 'bundles'
 
 export type GritLevel = 1 | 2 | 3 | 4 | 5;
 
-export type TradeProfession = 
-  | 'Mechanic / Automotive'
-  | 'Welder / Metal Fabricator'
-  | 'Carpenter / Woodworker'
-  | 'Landscaper / Forestry'
-  | 'Construction / Drywaller'
-  | 'Plumber / Pipefitter'
-  | 'Painter / Finisher'
-  | 'Weekend DIY / Garage'
-  | 'Other'
-  | string;
-
 export interface ProductPackOption {
   id: string;
   name: string;
@@ -22,24 +10,6 @@ export interface ProductPackOption {
   unitPrice: number;
   badge?: string;
   savingsPercent?: number;
-}
-
-export interface Review {
-  id: string;
-  productId: string;
-  productName: string;
-  author: string;
-  profession: TradeProfession;
-  rating: number;
-  title: string;
-  content: string;
-  date: string;
-  verifiedBuyer: boolean;
-  helpfulCount: number;
-  gritRating?: number;
-  latherRating?: number;
-  longevityRating?: number;
-  avatarText?: string;
 }
 
 export interface Product {
@@ -63,8 +33,6 @@ export interface Product {
   ingredients: string[];
   tradeSuitability: string[];
   howToUse: string;
-  rating: number;
-  reviewCount: number;
   packOptions: ProductPackOption[];
   inStock: boolean;
   featured?: boolean;
@@ -76,8 +44,6 @@ export interface CartItem {
   product: Product;
   selectedPack: ProductPackOption;
   quantity: number;
-  isSubscription?: boolean;
-  subscriptionFrequencyWeeks?: number;
 }
 
 export interface CheckoutAddress {
@@ -102,30 +68,4 @@ export interface ShippingMethod {
   duration: string;
   price: number;
   description: string;
-}
-
-export interface PaymentDetails {
-  method: 'card' | 'apple_pay' | 'google_pay' | 'shop_pay';
-  cardNumber: string;
-  cardName: string;
-  expiry: string;
-  cvv: string;
-}
-
-export interface Order {
-  orderId: string;
-  orderDate: string;
-  items: CartItem[];
-  address: CheckoutAddress;
-  shippingMethod: ShippingMethod;
-  paymentMethod: string;
-  subtotal: number;
-  discount: number;
-  discountCode?: string;
-  shippingCost: number;
-  tax: number;
-  total: number;
-  status: 'Confirmed' | 'Packing in Workshop' | 'In Transit' | 'Delivered';
-  estimatedDelivery: string;
-  trackingNumber: string;
 }

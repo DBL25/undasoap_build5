@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Product, ProductPackOption } from '../types';
 import { ProductCard } from './ProductCard';
 import { BrandBanner } from './BrandBanner';
-import { Sparkles, Plus, Check, Eye, Star, Layers } from 'lucide-react';
+import { Sparkles, Plus, Check, Eye, Layers } from 'lucide-react';
 
 interface ProductSectionProps {
   products: Product[];
@@ -63,7 +63,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
               Pick Your Bar or Bundle
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 font-semibold max-w-xl mt-2">
-              Every bar is cold-processed for 6 weeks and formulated around specific shift hazards.
+              Every bar is cold-processed and formulated around a specific place in the shift cycle.
             </p>
           </div>
 
@@ -112,11 +112,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
                     <span className="bg-[#c69a5f]/20 text-[#c69a5f] border border-[#c69a5f]/40 text-[10px] sm:text-xs font-mono font-black uppercase px-2.5 py-0.5 tracking-wider">
                       Flagship Complete Setup
                     </span>
-                    <div className="flex items-center gap-1 text-xs text-[#c69a5f]">
-                      <Star className="w-3.5 h-3.5 fill-current" />
-                      <span className="font-black text-white">{flagshipProduct.rating.toFixed(2)}</span>
-                      <span className="text-neutral-400">({flagshipProduct.reviewCount} verified reviews)</span>
-                    </div>
+                    <span className="text-[10px] font-mono font-black uppercase tracking-widest text-neutral-400">Built for the Shift</span>
                   </div>
 
                   <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display text-white mb-2 leading-none uppercase">
@@ -161,11 +157,8 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
                     <div className="text-3xl sm:text-4xl font-display font-black text-white">
                       ${flagshipProduct.price}.00
                     </div>
-                    <div className="text-sm font-bold text-neutral-500 line-through">
-                      $50.00
-                    </div>
                     <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-black px-2 py-0.5 uppercase tracking-wide">
-                      Flagship Value
+                      Pouch + Manifesto Included
                     </span>
                   </div>
 

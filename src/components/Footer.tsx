@@ -1,23 +1,12 @@
-import React, { useState } from 'react';
-import { Mail, Check, Sparkles, Truck, ShieldCheck, Heart } from 'lucide-react';
+import React from 'react';
+import { Sparkles } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
 
 interface FooterProps {
   onOpenQuiz: () => void;
-  onOpenOrderLookup: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup }) => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim() && email.includes('@')) {
-      setSubscribed(true);
-    }
-  };
-
+export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -39,40 +28,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
               Get The Drop
             </h3>
             <p className="text-xs sm:text-sm text-black font-bold max-w-md mx-auto leading-relaxed">
-              New small batch cures, fresh shop restocks, and subscriber-only crew discounts. Zero fluff, just soap.
+              New small-batch cures, production updates, and launch news. Zero fluff, just soap.
             </p>
 
-            {subscribed ? (
-              <div className="p-4 bg-black text-white border-2 border-black space-y-1">
-                <div className="flex items-center justify-center gap-2 text-sm font-black text-[#c69a5f]">
-                  <Check className="w-5 h-5" />
-                  <span>You’re on the Workshop Roster!</span>
-                </div>
-                <p className="text-xs font-mono text-neutral-300">
-                  Use code <strong className="text-[#c69a5f] underline">UNDAFIRST</strong> at checkout for 10% off your first batch.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto pt-2">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your trade email..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-white border-3 border-black px-4 py-3 text-xs sm:text-sm font-bold text-black focus:outline-none placeholder:text-neutral-500"
-                />
-                <button
-                  type="submit"
-                  className="bg-black hover:bg-white hover:text-black text-[#c69a5f] font-black uppercase text-xs px-6 py-3 border-3 border-black tracking-widest transition-colors cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                >
-                  Join Crew
-                </button>
-              </form>
-            )}
-
-            <div className="pt-2 text-[10px] font-mono font-bold uppercase text-black/70">
-              [ PROMO CODE READY: USE <span className="underline">DIRTYWORK10</span> FOR 10% OFF ]
+            <div className="p-4 bg-black text-white border-2 border-black space-y-1 max-w-md mx-auto">
+              <div className="text-sm font-black text-[#c69a5f] uppercase tracking-wider">Launch Updates Coming Soon</div>
+              <p className="text-xs font-mono text-neutral-300">The workshop roster opens when the storefront is ready to accept real orders.</p>
             </div>
           </div>
         </div>
@@ -95,8 +56,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
               Nature’s answer to dirty work. Handmade small-batch goat’s milk and activated charcoal soap, crafted in the USA for hard-working tradesmen.
             </p>
             <div className="text-[11px] font-mono text-[#c69a5f] font-bold">
-              • Small Batch Cured 6 Weeks<br/>
-              • 100% Zero Synthetic Detergents<br/>
+              • Small-Batch Cold Process<br/>
+              • Goat’s Milk + Charcoal<br/>
               • Biodegradable Packaging
             </div>
           </div>
@@ -109,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
             <ul className="space-y-2 text-xs font-bold text-neutral-300">
               <li>
                 <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer text-[#c69a5f]">
-                  The Full Shift ($44)
+                  The Full Shift ($38)
                 </button>
               </li>
               <li>
@@ -152,11 +113,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('reviews')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  Verified Tradesmen Reviews
-                </button>
-              </li>
-              <li>
                 <button onClick={onOpenQuiz} className="hover:text-[#c69a5f] transition-colors cursor-pointer flex items-center gap-1 text-[#c69a5f]">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Find My Routine</span>
@@ -165,23 +121,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
             </ul>
           </div>
 
-          {/* Column 3: Customer Service & Order Tracking */}
+          {/* Column 3: Workshop support */}
           <div className="space-y-3">
             <h5 className="text-xs font-black uppercase tracking-widest text-[#c69a5f]">
               Workshop Support
             </h5>
             <ul className="space-y-2 text-xs font-bold text-neutral-300">
-              <li>
-                <button onClick={onOpenOrderLookup} className="hover:text-[#c69a5f] transition-colors cursor-pointer flex items-center gap-1.5 text-white">
-                  <Truck className="w-3.5 h-3.5 text-[#c69a5f]" />
-                  <span>Track Existing Order</span>
-                </button>
-              </li>
               <li className="text-neutral-400">
                 Free Shipping on Orders $35+
               </li>
               <li className="text-neutral-400">
-                30-Day Grime Guarantee: Love it or full refund
+                Same Underneath. Built for the Shift.
               </li>
               <li className="text-neutral-400">
                 Support: crew@undasoap.com

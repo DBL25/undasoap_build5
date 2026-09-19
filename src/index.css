@@ -68,6 +68,53 @@
   border-width: 3px;
 }
 
+@keyframes undaBannerHeadline {
+  0%, 4% { opacity: 0; transform: translateY(18px); filter: blur(8px); }
+  13%, 58% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  78%, 100% { opacity: 0; transform: translateY(-8px); filter: blur(4px); }
+}
+
+@keyframes undaBannerLogo {
+  0%, 30% { opacity: 0; transform: scale(0.88) translateY(12px); }
+  43%, 82% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(1.03) translateY(-5px); }
+}
+
+@keyframes undaBannerWaterReveal {
+  0%, 24% { opacity: 0.82; transform: translateX(-3%); }
+  48%, 82% { opacity: 0.35; transform: translateX(3%); }
+  100% { opacity: 0.82; transform: translateX(-3%); }
+}
+
+.unda-banner-headline {
+  animation: undaBannerHeadline 10s ease-in-out infinite;
+}
+
+.unda-banner-logo {
+  animation: undaBannerLogo 10s ease-in-out infinite;
+}
+
+.unda-banner-water {
+  animation: undaBannerWaterReveal 10s ease-in-out infinite;
+  width: 106%;
+  left: -3%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .unda-brand-banner video {
+    display: none;
+  }
+
+  .unda-banner-headline,
+  .unda-banner-logo,
+  .unda-banner-water {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
