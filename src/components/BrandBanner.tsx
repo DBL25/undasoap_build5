@@ -46,7 +46,9 @@ export const BrandBanner: React.FC = () => {
               UNDA • Same Underneath
             </div>
             <h3 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase leading-[0.92] tracking-tight">
-              It’s Deeper<br className="hidden sm:block" /> Than Soap.
+              <span className="block">Dirt Goes</span>
+              <span className="block">Deeper Than</span>
+              <span className="block">You Think.</span>
             </h3>
           </div>
 
