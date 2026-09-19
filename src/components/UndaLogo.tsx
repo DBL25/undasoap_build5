@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import undaWhiteLogoImg from '../assets/images/unda_logo_white_1787511438102.jpg';
+import undaWhiteLogoImg from '../assets/images/UNDA_LOGO.png';
 
 interface UndaLogoProps {
   className?: string;
@@ -49,5 +49,4 @@ export const UndaLogo: React.FC<UndaLogoProps> = ({
 
   return logoImage;
 };
-
 
