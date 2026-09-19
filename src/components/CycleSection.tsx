@@ -119,7 +119,7 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
               Get The Full Shift — $44
             </h4>
             <p className="text-xs sm:text-sm text-black/90 font-bold mt-1">
-              Includes 1x Reset + 1x Recharge + 1x Graveyard + black mesh pouch + manifesto card, boxed.
+              Includes 1x Reset + 1x Recharge + 1x Graveyard + the exclusive black mesh pouch + manifesto card, boxed.
             </p>
           </div>
 

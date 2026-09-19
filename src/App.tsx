@@ -26,7 +26,20 @@ export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('unda_cart_v1');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: CartItem[] = JSON.parse(saved);
+        const currentProducts = new Map(PRODUCTS.map(product => [product.id, product]));
+
+        return parsed.flatMap((item) => {
+          const currentProduct = currentProducts.get(item.product.id);
+          if (!currentProduct) return [];
+
+          const currentPack = currentProduct.packOptions.find(pack => pack.id === item.selectedPack.id)
+            || currentProduct.packOptions[0];
+
+          return [{ ...item, product: currentProduct, selectedPack: currentPack }];
+        });
+      }
     } catch (e) {
       console.error(e);
     }

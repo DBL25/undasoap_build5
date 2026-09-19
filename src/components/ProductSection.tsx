@@ -22,7 +22,23 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
   const flagshipProduct = products.find(p => p.id === 'the-full-shift-kit') || products.find(p => p.id === 'the-rotation');
 
   const sortedProducts = useMemo(() => {
-    return [...products].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    const catalogOrder = [
+      'the-full-shift-kit',
+      'the-rotation',
+      'the-cycle',
+      'the-reset',
+      'the-recharge',
+      'the-graveyard',
+    ];
+
+    return [...products].sort((a, b) => {
+      const featuredDifference = Number(Boolean(b.featured)) - Number(Boolean(a.featured));
+      if (featuredDifference !== 0) return featuredDifference;
+
+      const aIndex = catalogOrder.indexOf(a.id);
+      const bIndex = catalogOrder.indexOf(b.id);
+      return (aIndex === -1 ? catalogOrder.length : aIndex) - (bIndex === -1 ? catalogOrder.length : bIndex);
+    });
   }, [products]);
 
   const handleAddFlagship = () => {
@@ -44,7 +60,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
               <span>02 — Small Batch Hardware</span>
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display text-black uppercase tracking-tight">
-              Pick Your Bar & Gear
+              Pick Your Bar or Bundle
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 font-semibold max-w-xl mt-2">
               Every bar is cold-processed for 6 weeks and formulated around specific shift hazards.
@@ -84,7 +100,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
                   </div>
                   <div className="absolute bottom-3 right-3 bg-black/90 text-white px-3 py-1 text-xs font-bold flex items-center gap-1.5 border border-white/20">
                     <Layers className="w-3.5 h-3.5 text-[#c69a5f]" />
-                    <span>3 Bars + Pouch + Box</span>
+                    <span>3 Bars + Exclusive Pouch + Box</span>
                   </div>
                 </div>
               </div>
@@ -132,9 +148,9 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
                       <div className="text-[10px] text-neutral-400 mt-0.5">Midnight Heavy Bar</div>
                     </div>
                     <div className="p-2.5 bg-[#121212] border border-neutral-800 flex flex-col justify-between">
-                      <div className="text-[10px] font-mono text-[#c69a5f] font-black uppercase">4. Pouch & Box</div>
-                      <div className="text-xs font-bold text-white mt-1">Black Mesh + Box</div>
-                      <div className="text-[10px] text-neutral-400 mt-0.5">Lather & Manifesto</div>
+                      <div className="text-[10px] font-mono text-[#c69a5f] font-black uppercase">4. Kit Exclusives</div>
+                      <div className="text-xs font-bold text-white mt-1">Black Mesh + Manifesto</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">Not Sold Separately</div>
                     </div>
                   </div>
                 </div>
@@ -199,7 +215,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
         <div className="mb-6 flex items-center justify-between pb-3 border-b-2 border-neutral-200">
           <div>
             <span className="text-[11px] font-mono font-black uppercase text-[#a97e45] tracking-widest block">
-              Individual Cold-Processed Bars & Gear
+              Cold-Processed Bars & Bundle Systems
             </span>
             <h3 className="text-lg sm:text-xl font-display font-black text-black uppercase">
               Full Workshop Lineup ({sortedProducts.length} Items)

@@ -119,6 +119,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
               </li>
               <li>
                 <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
+                  The Cycle ($22)
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
                   The Graveyard ($14)
                 </button>
               </li>
@@ -130,11 +135,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz, onOpenOrderLookup })
               <li>
                 <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
                   The Recharge ($12)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  Black Fiber Mesh Pouch ($6)
                 </button>
               </li>
             </ul>

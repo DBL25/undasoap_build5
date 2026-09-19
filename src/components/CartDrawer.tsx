@@ -71,8 +71,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     setPromoError('');
   };
 
-  // Workshop quick add-on suggestion (e.g. Sisal Pouch)
-  const addOnSuggestion = products.find(p => p.id === 'sisal-soap-saver-pouch');
+  // Offer the two-bar daily system instead of selling the Full Shift pouch separately.
+  const addOnSuggestion = products.find(p => p.id === 'the-cycle');
 
   if (!isOpen) return null;
 
@@ -248,7 +248,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     className="w-12 h-12 object-cover border border-white/20 flex-shrink-0"
                   />
                   <div className="truncate">
-                    <div className="text-[10px] text-[#c69a5f] font-mono uppercase font-bold">Addon Recommendation</div>
+                    <div className="text-[10px] text-[#c69a5f] font-mono uppercase font-bold">Complete The Cycle</div>
                     <div className="text-xs font-bold text-white truncate">{addOnSuggestion.name}</div>
                     <div className="text-xs font-black text-white">${addOnSuggestion.price}</div>
                   </div>

@@ -18,10 +18,12 @@ import graveyardBarLifestyle from '../assets/images/Graveyard-lifestyle.png';
 import graveyardBarSide from '../assets/images/Graveyard-side.png';
 import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
 
-// Bundles & accessories
+// Bundle systems
 import theRotationImg from '../assets/images/the_rotation_bundle_1787832036701.jpg';
 import theRotationKitImg from '../assets/images/the_rotation_kit_bundle_1787832485903.jpg';
-import blackPouchImg from '../assets/images/black_fiber_pouch_1787509798063.jpg';
+import theCycleImg from '../assets/images/the-cycle-packshot.webp';
+import theCycleOpenImg from '../assets/images/the-cycle-open-hero.webp';
+import theCycleOverheadImg from '../assets/images/the-cycle-overhead.webp';
 
 export const HERO_WORDS: string[] = [
   'something',
@@ -51,23 +53,23 @@ export const PRODUCTS: Product[] = [
   {
     id: 'the-full-shift-kit',
     name: 'The Full Shift',
-    tagline: '1x Reset + 1x Recharge + 1x Graveyard + Mesh Pouch + Manifesto Card',
+    tagline: 'The complete lineup. The exclusive scrub tool. The full experience.',
     category: 'bundles',
     categoryLabel: 'Flagship Boxed Kit',
     price: 44,
     weight: '3 x 4.2 oz Bars + Black Mesh Pouch + Box',
     ribbon: 'Flagship Boxed Kit',
     gritLevel: 5,
-    gritDescription: 'The Flagship Box: 3 Full Bars + Black Mesh Pouch + Manifesto Card',
+    gritDescription: 'The Flagship Box: 3 Full Bars + Exclusive Black Mesh Pouch + Manifesto Card',
     image: theRotationKitImg,
     secondaryImage: theRotationImg,
-    description: 'The flagship boxed kit: 1x Reset + 1x Recharge + 1x Graveyard + black mesh pouch + UNDA manifesto card, in the printed kraft presentation box. Everything you need for the complete trade week.',
-    fullDetails: 'The flagship complete setup for trade life. Contains all three signature cold-process bars, our heavy-duty black mesh exfoliating pouch, and the UNDA manifesto card in our printed kraft presentation box. Contents: 1x The Reset (Charcoal & goat milk grime cutter), 1x The Recharge (Soothing daily goat milk & sea salt bar), 1x The Graveyard (Full concentrated activated charcoal heavy bar), 1x Black Mesh Exfoliating Soap Pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, coarse sea salt, and refreshing eucalyptus & spearmint essential oils.',
+    description: 'The flagship boxed kit: The Reset, The Recharge, The Graveyard, the kit-exclusive black mesh exfoliating pouch, and the UNDA manifesto card in a complete kraft presentation box.',
+    fullDetails: 'The complete UNDA system for trade life. The Full Shift contains all three signature cold-process bars, the heavy-duty black mesh exfoliating pouch available exclusively inside this kit, the UNDA manifesto card, and the complete printed kraft presentation box. Contents: 1x The Reset, 1x The Recharge, 1x The Graveyard, 1x exclusive Black Mesh Exfoliating Soap Pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, coarse sea salt, and refreshing eucalyptus & spearmint essential oils.',
     keyBenefits: [
-      'Contents: The Reset, The Recharge, The Graveyard, Black Mesh Pouch & Manifesto Card',
+      'Contents: The Reset, The Recharge, The Graveyard, kit-exclusive Black Mesh Pouch & Manifesto Card',
       'The complete flagship lineup: Covers day shift, second half, midnight shifts, and the scrub tool',
       'Printed kraft presentation box — great for shop lockers or gifting to crew',
-      'Black mesh pouch amplifies aggressive lather, boosts scrub friction, and hang-dries cleanly',
+      'The black mesh pouch is exclusive to The Full Shift and is not sold separately',
       'Handmade with farm-fresh goat’s milk, pure activated charcoal & coarse sea salt'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
@@ -161,7 +163,7 @@ export const PRODUCTS: Product[] = [
       'Spearmint Essential Oil'
     ],
     tradeSuitability: ['Diesel Mechanics', 'Pipeline Welders', 'Machinists', 'Construction & Paving Crews'],
-    howToUse: 'Work into a dense lather between hands or with a sisal pouch. Scrub hands, arms, neck, and body in the shower after the shift. Rinses clean with zero residue.',
+    howToUse: 'Work into a dense lather between wet hands. Scrub hands, arms, neck, and body in the shower after the shift. Rinses clean with zero residue.',
     rating: 4.95,
     reviewCount: 318,
     inStock: true,
@@ -204,7 +206,7 @@ export const PRODUCTS: Product[] = [
       'Spearmint Essential Oil'
     ],
     tradeSuitability: ['Midnight Shift Crews', 'Diesel & Heavy Equipment Techs', 'Foundry & Structural Ironworkers', 'Asphalt & Oil Field Crews'],
-    howToUse: 'Lather between wet hands or with the black fiber pouch. Scrub forearms, neck, face, and body after heavy shifts. Rinses away completely clean with zero residue.',
+    howToUse: 'Lather between wet hands. Scrub forearms, neck, face, and body after heavy shifts. Rinses away completely clean with zero residue.',
     rating: 4.98,
     reviewCount: 204,
     inStock: true,
@@ -257,39 +259,42 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
-    id: 'sisal-soap-saver-pouch',
-    name: 'Black Woven Fiber Exfoliating Pouch',
-    tagline: 'Heavy-Duty Black Fiber Soap Saver & Scrub Bag',
-    category: 'accessories',
-    categoryLabel: 'Workshop Gear',
-    price: 6,
-    weight: '1.2 oz Woven Fiber',
-    gritLevel: 3,
-    gritDescription: 'Tactile Black Scrub Pouch Texture',
-    image: blackPouchImg,
-    secondaryImage: resetBarImg,
-    description: 'Slip any bar into this black woven fiber pouch for maximum grip, explosive foam, and easy hang-dry shower storage.',
-    fullDetails: 'Woven from rugged textured black plant fibers. Delivers industrial traction so wet soap never slips out of oily or soapy hands. Collects every last sliver of soap and hangs dry between shifts.',
+    id: 'the-cycle',
+    name: 'The Cycle',
+    tagline: 'Reset the shift. Recharge for the next one.',
+    category: 'bundles',
+    categoryLabel: 'Two-Bar Daily System',
+    price: 22,
+    weight: '2 x 4.2 oz Bars (8.4 oz Total)',
+    ribbon: 'Daily Duo',
+    gritLevel: 5,
+    gritDescription: 'Two-Step Routine: Heavy Reset + Daily Recharge',
+    image: theCycleImg,
+    secondaryImage: theCycleOpenImg,
+    gallery: [theCycleImg, theCycleOpenImg, theCycleOverheadImg, resetBarImg, rechargeBarImg],
+    description: 'The two middle moves in the UNDA rhythm: Reset the grime, Recharge the skin, and get ready to repeat.',
+    fullDetails: 'The Cycle is a focused two-bar system built around the core UNDA routine. The Reset strips away the weight of the shift with activated charcoal, goat’s milk, and sea salt. The Recharge follows with a creamy goat’s milk and sea salt lather that leaves skin ready for whatever comes next. No pouch, no filler, and no duplicate bars—just the everyday Reset-and-Recharge combination in its own compact package.',
     keyBenefits: [
-      'Amplifies rich lather while saving slippery soap slivers',
-      'Durable black bead drawstring allows easy hanging on shower hooks',
-      'Rugged matte black textured weave hides shop grime',
-      'Doubles as an adjustable body scrub sponge'
+      'Contents: 1x The Reset and 1x The Recharge',
+      'A simple post-shift and next-shift two-step routine',
+      'The Reset handles embedded grime, grease, soot, and sweat',
+      'The Recharge restores a clean, comfortable skin feel for daily use',
+      'Compact two-bar package with no accessories or unnecessary extras'
     ],
-    scentNotes: ['Unscented'],
+    scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
-      '100% Black Woven Plant Fibers',
-      'Black Locking Bead & Heavy-Duty Drawstring Cord'
+      'The Reset Bar (Activated Charcoal, Goat’s Milk, Sea Salt, Lye, Eucalyptus & Spearmint)',
+      'The Recharge Bar (Goat’s Milk, Sea Salt, Lye, Eucalyptus & Spearmint)'
     ],
-    tradeSuitability: ['All Showers', 'Job Site Wash Stations'],
-    howToUse: 'Insert soap bar into pouch, tighten drawstring, wet with water, and massage body to create rich foaming lather.',
-    rating: 4.87,
-    reviewCount: 88,
+    tradeSuitability: ['Everyday Trade Crews', 'Mechanics & Fabricators', 'Construction & Landscaping', 'Daily Post-Shift Showers'],
+    howToUse: 'Use The Reset after dirty shifts to cut through grime. Follow with The Recharge during the next shower or on lighter days. Reset. Recharge. Repeat.',
+    rating: 5.0,
+    reviewCount: 0,
     inStock: true,
-    featured: false,
+    featured: true,
     packOptions: [
-      { id: 'single-pouch', name: '1x Black Fiber Pouch', count: 1, price: 6, unitPrice: 6 },
-      { id: 'three-pouches', name: '3-Pack Pouches (Save 22%)', count: 3, price: 14, unitPrice: 4.66, badge: 'Best Value', savingsPercent: 22 }
+      { id: 'single-cycle', name: '1x The Cycle (2 Bars)', count: 1, price: 22, unitPrice: 22, badge: 'Save $2' },
+      { id: 'double-cycle', name: '2x The Cycle (4 Bars Total)', count: 2, price: 42, unitPrice: 21, badge: 'Save $6', savingsPercent: 13 }
     ]
   }
 ];

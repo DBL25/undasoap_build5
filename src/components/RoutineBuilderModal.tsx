@@ -756,7 +756,7 @@ export const RoutineBuilderModal: React.FC<RoutineBuilderModalProps> = ({
                       Run It Fully Equipped — The Full Shift $44
                     </div>
                     <div className="text-[11px] text-neutral-300 font-medium leading-snug">
-                      Your three bars + mesh scrub pouch + manifesto card, boxed.
+                      Your three bars + kit-exclusive mesh scrub pouch + manifesto card, boxed.
                     </div>
                   </div>
                 </div>
