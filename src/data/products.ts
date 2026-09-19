@@ -19,7 +19,7 @@ import graveyardBarSide from '../assets/images/Graveyard-side.png';
 import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
 
 // Bundle systems
-import theRotationImg from '../assets/images/the_rotation_bundle_1787832036701.jpg';
+import theRotationImg from '../assets/images/the-rotation-wet-counter.webp';
 import theRotationKitImg from '../assets/images/the_rotation_kit_bundle_1787832485903.jpg';
 import theCycleImg from '../assets/images/the-cycle-packshot.webp';
 import theCycleOpenImg from '../assets/images/the-cycle-open-hero.webp';
