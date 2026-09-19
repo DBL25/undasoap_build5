@@ -116,7 +116,7 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
               Flagship Complete Boxed Setup
             </span>
             <h4 className="text-2xl sm:text-3xl font-display text-black uppercase">
-              Get The Full Shift — $44
+              Get The Full Shift — $38
             </h4>
             <p className="text-xs sm:text-sm text-black/90 font-bold mt-1">
               Includes 1x Reset + 1x Recharge + 1x Graveyard + the exclusive black mesh pouch + manifesto card, boxed.
@@ -128,7 +128,7 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
             id="cycle-full-shift-btn"
             className="w-full sm:w-auto bg-black hover:bg-white hover:text-black text-[#c69a5f] px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-widest border-2 border-black transition-all cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
           >
-            <span>Get The Full Shift — $44</span>
+            <span>Get The Full Shift — $38</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

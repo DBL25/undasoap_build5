@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
-import { Product, ProductPackOption, Review } from '../types';
-import { X, Star, Check, Plus, ShieldCheck, Flame, Droplets, Wrench, Sparkles, Heart } from 'lucide-react';
+import { Product, ProductPackOption } from '../types';
+import { X, Check, Plus, Flame, Droplets, Wrench } from 'lucide-react';
 
 interface ProductDetailModalProps {
   product: Product | null;
-  reviews: Review[];
   onClose: () => void;
-  onAddToCart: (product: Product, pack: ProductPackOption, isSubscription?: boolean) => void;
+  onAddToCart: (product: Product, pack: ProductPackOption) => void;
 }
 
 export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   product,
-  reviews,
   onClose,
   onAddToCart,
 }) => {
   const [selectedPackIdx, setSelectedPackIdx] = useState(0);
-  const [isSubscription, setIsSubscription] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'ingredients' | 'reviews'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'ingredients'>('overview');
   const [addedAnimation, setAddedAnimation] = useState(false);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
 
@@ -26,12 +23,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   if (!product) return null;
 
   const currentPack = product.packOptions[selectedPackIdx] || product.packOptions[0];
-  const finalPrice = isSubscription ? Number((currentPack.price * 0.85).toFixed(2)) : currentPack.price;
-
-  const productReviews = reviews.filter(r => r.productId === product.id);
+  const subscriptionComingSoon = ['the-reset', 'the-recharge', 'the-graveyard', 'the-cycle', 'the-rotation'].includes(product.id);
 
   const handleAdd = () => {
-    onAddToCart(product, currentPack, isSubscription);
+    onAddToCart(product, currentPack);
     setAddedAnimation(true);
     setTimeout(() => {
       setAddedAnimation(false);
@@ -136,24 +131,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
             </div>
 
-            {/* Right Column: Title, Reviews, Pack Selection, & Purchase */}
+            {/* Right Column: Title, pack selection, and purchase */}
             <div className="space-y-6">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex text-[#c69a5f]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <span className="text-xs font-black text-black">{product.rating.toFixed(2)}</span>
-                  <button 
-                    onClick={() => setActiveTab('reviews')}
-                    className="text-xs font-bold text-[#a97e45] underline hover:text-black"
-                  >
-                    ({product.reviewCount} trade reviews)
-                  </button>
-                </div>
-
                 <h2 className="text-3xl sm:text-4xl font-display text-black mb-2 leading-tight">
                   {product.name}
                 </h2>
@@ -163,21 +143,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Pricing Display */}
               <div className="flex items-baseline gap-3 pb-4 border-b-2 border-neutral-200">
                 <div className="text-3xl sm:text-4xl font-black font-display text-black">
-                  ${finalPrice}
+                  ${currentPack.price}
                 </div>
-                {isSubscription && (
-                  <div className="text-sm font-bold text-neutral-400 line-through">
-                    ${currentPack.price}
-                  </div>
-                )}
                 <span className="text-xs font-mono font-bold text-neutral-500 uppercase">
                   / {product.weight}
                 </span>
-                {isSubscription && (
-                  <span className="bg-emerald-100 text-emerald-800 text-[11px] font-black px-2 py-0.5 border border-emerald-300 uppercase">
-                    15% Auto-Ship Savings
-                  </span>
-                )}
               </div>
 
               {/* Pack Selection Buttons */}
@@ -210,51 +180,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </div>
               </div>
 
-              {/* Purchase Mode Toggle: One-Time vs Subscribe & Save */}
-              <div className="border-2 border-black bg-neutral-50 p-4 space-y-3">
-                <label 
-                  onClick={() => setIsSubscription(false)}
-                  className={`flex items-center justify-between p-2.5 border cursor-pointer transition-colors ${
-                    !isSubscription ? 'bg-white border-black shadow-sm font-bold' : 'border-transparent text-neutral-600'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="radio"
-                      name="purchaseMode"
-                      checked={!isSubscription}
-                      onChange={() => setIsSubscription(false)}
-                      className="accent-black"
-                    />
-                    <span className="text-xs uppercase font-extrabold">One-Time Workshop Order</span>
+              {subscriptionComingSoon && (
+                <div className="border-2 border-black bg-[#c69a5f]/12 p-4">
+                  <div className="text-xs uppercase font-black text-black">Subscribe & Save 15% — Coming Soon</div>
+                  <div className="text-[11px] text-neutral-600 mt-1 font-medium">
+                    Recurring delivery is planned for launch. This preview accepts one-time cart selections only.
                   </div>
-                  <span className="text-xs font-black">${currentPack.price}</span>
-                </label>
-
-                <label 
-                  onClick={() => setIsSubscription(true)}
-                  className={`flex items-center justify-between p-2.5 border cursor-pointer transition-colors ${
-                    isSubscription ? 'bg-[#c69a5f]/15 border-black shadow-sm font-bold' : 'border-transparent text-neutral-600'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="radio"
-                      name="purchaseMode"
-                      checked={isSubscription}
-                      onChange={() => setIsSubscription(true)}
-                      className="accent-[#c69a5f]"
-                    />
-                    <div>
-                      <span className="text-xs uppercase font-extrabold">Subscribe & Save 15%</span>
-                      <div className="text-[10px] text-neutral-500">Delivered every 6 weeks. Cancel anytime.</div>
-                    </div>
-                  </div>
-                  <span className="text-xs font-black text-emerald-800">
-                    ${(currentPack.price * 0.85).toFixed(2)}
-                  </span>
-                </label>
-              </div>
+                </div>
+              )}
 
               {/* Add to Cart CTA */}
               <button
@@ -273,7 +206,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 ) : (
                   <>
                     <Plus className="w-5 h-5" />
-                    <span>Add {currentPack.name.split('(')[0]} To Cart — ${finalPrice}</span>
+                    <span>Add {currentPack.name.split('(')[0]} To Cart — ${currentPack.price}</span>
                   </>
                 )}
               </button>
@@ -281,13 +214,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Trust markers */}
               <div className="flex items-center justify-between text-[11px] font-bold text-neutral-500 pt-2 border-t border-neutral-200">
                 <span>✓ Free Ship Over $35</span>
-                <span>✓ 30-Day Grime Guarantee</span>
-                <span>✓ Small Batch USA</span>
+                <span>✓ Same Underneath</span>
+                <span>✓ Built for the Shift</span>
               </div>
             </div>
           </div>
 
-          {/* Tabbed Specs, Ingredients, and Reviews Navigation */}
+          {/* Tabbed specs and formula highlights */}
           <div className="border-t-3 border-black pt-6">
             <div className="flex border-b-2 border-black gap-2 mb-6">
               <button
@@ -308,17 +241,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     : 'text-neutral-500 hover:text-black'
                 }`}
               >
-                Raw Ingredients ({product.ingredients.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('reviews')}
-                className={`pb-3 px-4 font-display text-xs sm:text-sm uppercase tracking-wider transition-colors cursor-pointer ${
-                  activeTab === 'reviews'
-                    ? 'border-b-4 border-[#c69a5f] text-black font-black'
-                    : 'text-neutral-500 hover:text-black'
-                }`}
-              >
-                Reviews ({productReviews.length})
+                Formula Highlights ({product.ingredients.length})
               </button>
             </div>
 
@@ -368,7 +291,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {activeTab === 'ingredients' && (
               <div className="space-y-4">
                 <p className="text-xs text-neutral-600 font-medium">
-                  We disclose 100% of our small-batch cold-processed ingredients. Zero hidden fragrances, synthetic preservatives, or artificial dyes.
+                  Formula highlights shown while the complete cold-process ingredient declarations are finalized.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.ingredients.map((ing, i) => (
@@ -378,37 +301,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
-
-            {/* Tab: Reviews */}
-            {activeTab === 'reviews' && (
-              <div className="space-y-4">
-                {productReviews.length > 0 ? (
-                  productReviews.map((rev) => (
-                    <div key={rev.id} className="p-4 bg-neutral-50 border-2 border-black space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="font-extrabold text-sm">{rev.author}</span>
-                          <span className="text-[10px] bg-black text-[#c69a5f] font-mono px-2 py-0.5 font-bold uppercase">
-                            {rev.profession}
-                          </span>
-                        </div>
-                        <div className="flex text-[#c69a5f]">
-                          {[...Array(rev.rating)].map((_, i) => (
-                            <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                          ))}
-                        </div>
-                      </div>
-                      <h5 className="font-black text-xs text-black">{rev.title}</h5>
-                      <p className="text-xs text-neutral-700 leading-relaxed font-medium">{rev.content}</p>
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-xs text-neutral-500 font-bold py-6 text-center">
-                    No verified reviews yet for this specific batch. Be the first to leave one below!
-                  </p>
-                )}
               </div>
             )}
 

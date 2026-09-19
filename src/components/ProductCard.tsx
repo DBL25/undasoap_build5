@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Product, ProductPackOption } from '../types';
-import { Star, Plus, Eye, Check, ShieldCheck, Flame } from 'lucide-react';
+import { Plus, Eye, Check, Flame } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -89,16 +89,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Product Content */}
       <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
         <div>
-          {/* Rating & Review Count */}
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#a97e45]">
               {product.categoryLabel}
             </span>
-            <div className="flex items-center gap-1 text-xs">
-              <Star className="w-3.5 h-3.5 fill-[#c69a5f] text-[#c69a5f]" />
-              <span className={`font-black ${isDark ? 'text-white' : 'text-black'}`}>{product.rating.toFixed(2)}</span>
-              <span className={`${isDark ? 'text-neutral-400' : 'text-neutral-500'} text-[11px]`}>({product.reviewCount})</span>
-            </div>
+            <span className={`text-[10px] font-mono font-black uppercase ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>Cold Process</span>
           </div>
 
           {/* Product Name */}
