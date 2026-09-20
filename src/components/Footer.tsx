@@ -57,49 +57,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
             <p className="text-xs text-neutral-400 font-medium leading-relaxed">
               Nature’s answer to dirty work. A small-batch soap system in development for hard-working tradespeople.
             </p>
-            <div className="text-[11px] font-mono text-[#c69a5f] font-bold">
-              • Small-Batch Development<br/>
-              • Goat’s Milk + Charcoal Highlights<br/>
-              • Final Formula Details Coming
-            </div>
           </div>
 
-          {/* Column 1: Shop */}
+          {/* Column 1: Development notes */}
           <div className="space-y-3">
             <h5 className="text-xs font-black uppercase tracking-widest text-[#c69a5f]">
-              Shop Lineup
+              In Development
             </h5>
             <ul className="space-y-2 text-xs font-bold text-neutral-300">
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer text-[#c69a5f]">
-                  The Full Shift ($38)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  The Rotation ($28)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  The Cycle ($22)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  The Graveyard ($14)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  The Reset ($12)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('shop')} className="hover:text-[#c69a5f] transition-colors cursor-pointer">
-                  The Recharge ($12)
-                </button>
-              </li>
+              <li>• Small-Batch Development</li>
+              <li>• Goat’s Milk + Charcoal Highlights</li>
+              <li>• Final Formula Details Coming</li>
             </ul>
           </div>
 
@@ -129,12 +97,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
               Workshop Support
             </h5>
             <ul className="space-y-2 text-xs font-bold text-neutral-300">
-              <li className="text-neutral-400">
-                Free Shipping on Orders $35+
-              </li>
-              <li className="text-neutral-400">
-                Same Underneath. Built for the Shift.
-              </li>
               <li>
                 <a href="mailto:crew@undasoap.com" className="text-neutral-400 hover:text-[#c69a5f] transition-colors">
                   Support: crew@undasoap.com
