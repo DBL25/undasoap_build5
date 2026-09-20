@@ -61,9 +61,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
 
           {/* Column 1: Development notes */}
           <div className="space-y-3">
-            <h5 className="text-xs font-black uppercase tracking-widest text-[#c69a5f]">
-              In Development
-            </h5>
             <ul className="space-y-2 text-xs font-bold text-neutral-300">
               <li>• Small-Batch Development</li>
               <li>• Goat’s Milk + Charcoal Highlights</li>
