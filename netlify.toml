@@ -1,3 +1,16 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+[[edge_functions]]
+  path = "/preview"
+  function = "protect-preview"
+
+[[edge_functions]]
+  path = "/preview/*"
+  function = "protect-preview"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

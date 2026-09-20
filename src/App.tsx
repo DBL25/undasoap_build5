@@ -9,6 +9,10 @@ import { Hero } from './components/Hero';
 import { ProductSection } from './components/ProductSection';
 import { CycleSection } from './components/CycleSection';
 import { Footer } from './components/Footer';
+import { FieldTestedSection } from './components/FieldTestedSection';
+import { PrelaunchLanding } from './components/PrelaunchLanding';
+import { PolicyPage } from './components/PolicyPage';
+import { ShiftSupplySection } from './components/ShiftSupplySection';
 
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { RoutineBuilderModal } from './components/RoutineBuilderModal';
@@ -17,7 +21,7 @@ import { CheckoutModal } from './components/CheckoutModal';
 
 import { CheckCircle2, X } from 'lucide-react';
 
-export default function App() {
+function StorefrontPreview() {
   // Cart state with localStorage persistence
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
@@ -125,6 +129,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-sans selection:bg-[#c69a5f] selection:text-black">
+      <div className="bg-[#c69a5f] text-black text-center px-4 py-2 text-[10px] sm:text-xs font-black uppercase tracking-[0.18em] border-b-2 border-black">
+        Private prelaunch demo • No orders or payments are being accepted
+      </div>
       
       {/* Top Announcements Marquee */}
       <MarqueeBanner />
@@ -158,6 +165,12 @@ export default function App() {
 
         {/* 4-Step Cycle Industrial Method */}
         <CycleSection onShopKit={scrollToShop} />
+
+        {/* Subscription service interest + cadence research */}
+        <ShiftSupplySection />
+
+        {/* Real-world proof collection — no fabricated reviews */}
+        <FieldTestedSection />
 
       </main>
 
@@ -219,4 +232,18 @@ export default function App() {
 
     </div>
   );
+}
+
+export default function App() {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  if (path.startsWith('/preview')) {
+    return <StorefrontPreview />;
+  }
+
+  if (path.startsWith('/policies/')) {
+    return <PolicyPage slug={path.split('/').filter(Boolean)[1] || 'faq'} />;
+  }
+
+  return <PrelaunchLanding />;
 }

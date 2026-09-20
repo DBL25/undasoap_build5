@@ -182,9 +182,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               {subscriptionComingSoon && (
                 <div className="border-2 border-black bg-[#c69a5f]/12 p-4">
-                  <div className="text-xs uppercase font-black text-black">Subscribe & Save 15% — Coming Soon</div>
+                  <div className="text-xs uppercase font-black text-black">Shift Supply Subscription — In Development</div>
                   <div className="text-[11px] text-neutral-600 mt-1 font-medium">
-                    Recurring delivery is planned for launch. This preview accepts one-time cart selections only.
+                    Recurring delivery is planned for launch. Cadence, savings, eligible products, and cancellation terms are not final yet.
                   </div>
                 </div>
               )}
@@ -291,7 +291,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {activeTab === 'ingredients' && (
               <div className="space-y-4">
                 <p className="text-xs text-neutral-600 font-medium">
-                  Formula highlights shown while the complete cold-process ingredient declarations are finalized.
+                  Formula highlights shown while the complete ingredient declarations and production method are finalized.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.ingredients.map((ing, i) => (

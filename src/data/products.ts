@@ -1,22 +1,22 @@
 import { Product } from '../types';
 
 // Reset gallery
-import resetBarImg from '../assets/images/Reset-main.png';
-import resetBarLifestyle from '../assets/images/Reset-lifestyle.png';
-import resetBarSide from '../assets/images/Reset-side.png';
-import resetBarMacro from '../assets/images/Reset-macro.png';
+import resetBarImg from '../assets/images/Reset-main.webp';
+import resetBarLifestyle from '../assets/images/Reset-lifestyle.webp';
+import resetBarSide from '../assets/images/Reset-side.webp';
+import resetBarMacro from '../assets/images/Reset-macro.webp';
 
 // Recharge gallery
-import rechargeBarImg from '../assets/images/Recharge-Main.png';
-import rechargeBarLifestyle from '../assets/images/Recharge-lifestyle.png';
-import rechargeBarSide from '../assets/images/Recharge-Side.jpg';
-import rechargeBarMacro from '../assets/images/Recharge-macro.png';
+import rechargeBarImg from '../assets/images/Recharge-Main.webp';
+import rechargeBarLifestyle from '../assets/images/Recharge-lifestyle.webp';
+import rechargeBarSide from '../assets/images/Recharge-Side.webp';
+import rechargeBarMacro from '../assets/images/Recharge-macro.webp';
 
 // Graveyard gallery
-import graveyardBarImg from '../assets/images/Graveyard-Main.png';
-import graveyardBarLifestyle from '../assets/images/Graveyard-lifestyle.png';
-import graveyardBarSide from '../assets/images/Graveyard-side.png';
-import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
+import graveyardBarImg from '../assets/images/Graveyard-Main.webp';
+import graveyardBarLifestyle from '../assets/images/Graveyard-lifestyle.webp';
+import graveyardBarSide from '../assets/images/Graveyard-side.webp';
+import graveyardBarMacro from '../assets/images/Graveyard-macro.webp';
 
 // Bundle systems
 import theRotationImg from '../assets/images/the-rotation-wet-counter.webp';
@@ -69,13 +69,13 @@ export const PRODUCTS: Product[] = [
     image: theRotationKitImg,
     gallery: [theRotationKitImg, fullShiftDetailImg, fullShiftAccessoriesImg, fullShiftLineupImg],
     description: 'The flagship boxed kit: The Reset, The Recharge, The Graveyard, the kit-exclusive black mesh exfoliating pouch, and the UNDA manifesto card in a complete kraft presentation box.',
-    fullDetails: 'The complete UNDA system for trade life. The Full Shift contains all three signature cold-process bars, the heavy-duty black mesh exfoliating pouch available exclusively inside this kit, the UNDA manifesto card, and the complete printed kraft presentation box. Contents: 1x The Reset, 1x The Recharge, 1x The Graveyard, 1x exclusive Black Mesh Exfoliating Soap Pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, coarse sea salt, and refreshing eucalyptus & spearmint essential oils.',
+    fullDetails: 'The complete UNDA system for trade life. The Full Shift concept contains all three signature bars, the heavy-duty black mesh exfoliating pouch planned exclusively for this kit, the UNDA manifesto card, and a printed kraft presentation box. Proposed contents: 1x The Reset, 1x The Recharge, 1x The Graveyard, 1x black mesh exfoliating soap pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Formula highlights currently include goat’s milk, activated charcoal, sea salt, eucalyptus, and spearmint.',
     keyBenefits: [
       'Contents: The Reset, The Recharge, The Graveyard, kit-exclusive Black Mesh Pouch & Manifesto Card',
       'The complete flagship lineup: Covers day shift, second half, midnight shifts, and the scrub tool',
       'Printed kraft presentation box — great for shop lockers or gifting to crew',
       'The black mesh pouch is exclusive to The Full Shift and is not sold separately',
-      'Handmade with farm-fresh goat’s milk, pure activated charcoal & coarse sea salt'
+      'Formula highlights: goat’s milk, activated charcoal, sea salt, eucalyptus & spearmint'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
       'Covers every shift: Day shift recovery, grime strip, and full charcoal cut',
       'Instant $10 savings compared to buying individual bars ($38 value)',
       'Customizable 3-bar mix option available through Find My Routine',
-      'Handmade with farm-fresh goat’s milk, activated charcoal & sea salt'
+      'Formula highlights: goat’s milk, activated charcoal, sea salt, eucalyptus & spearmint'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
@@ -140,31 +140,31 @@ export const PRODUCTS: Product[] = [
     categoryLabel: 'Heavy Duty & Grit',
     price: 12,
     weight: 'Full-Size Bar',
-    ribbon: 'Best Seller',
+    ribbon: 'Signature Bar',
     gritLevel: 5,
     gritDescription: 'Maximum Heavy Scrub (Sea Salt & Activated Charcoal)',
     image: resetBarImg,
     secondaryImage: resetBarLifestyle,
     gallery: [resetBarImg, resetBarLifestyle, resetBarSide, resetBarMacro],
-    description: "More than a hand bar — built for full-body post-shift showers. Cuts grease without stripping skin.",
-    fullDetails: 'A cold-process full-body and sink-scrub bar for demanding shifts. Formula highlights include goat’s milk, activated charcoal, sea salt, eucalyptus and spearmint. The full ingredient declaration will be published when the production formula is finalized.',
+    description: "More than a hand bar—designed for full-body post-shift showers and visible grime.",
+    fullDetails: 'A full-body and sink-scrub bar concept for demanding shifts. Formula highlights include goat’s milk, activated charcoal, sea salt, eucalyptus, and spearmint. The complete ingredient declaration, production method, net weight, and final directions will be published when the production formula is locked.',
     keyBenefits: [
       'Built for hands, arms, shoulders, and full post-shift body showers',
-      'Activated charcoal helps lift surface oil, carbon, and diesel soot',
-      'Sea salt delivers natural scrubbing friction without synthetic micro-plastics',
+      'Activated charcoal is included for a satisfying wash after oily, sooty shifts',
+      'Sea salt is being evaluated for noticeable physical scrub and texture',
       'Goat’s milk supports a creamy, comfortable post-shift wash',
-      'Clean eucalyptus & spearmint scent cuts shop grime and odors'
+      'Eucalyptus and spearmint are the planned scent direction'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
-      'Farm-Fresh Goat’s Milk',
+      'Goat’s Milk',
       'Activated Charcoal',
       'Sea Salt',
       'Eucalyptus Essential Oil',
       'Spearmint Essential Oil'
     ],
     tradeSuitability: ['Diesel Mechanics', 'Pipeline Welders', 'Machinists', 'Construction & Paving Crews'],
-    howToUse: 'Work into a dense lather between wet hands. Scrub hands, arms, neck, and body in the shower after the shift. Rinses clean with zero residue.',
+    howToUse: 'Planned use: work into a lather between wet hands, wash hands, arms, neck, and body, then rinse thoroughly. Final directions and warnings will appear before launch.',
     inStock: true,
     featured: true,
     packOptions: [
@@ -182,29 +182,29 @@ export const PRODUCTS: Product[] = [
     weight: 'Full-Size Bar',
     ribbon: 'Full Charcoal',
     gritLevel: 5,
-    gritDescription: 'Maximum Heavy Cut (Full Bar Activated Charcoal & Added Sea Salt)',
+    gritDescription: 'Highest Planned Scrub Level (Activated Charcoal & Added Sea Salt)',
     image: graveyardBarImg,
     secondaryImage: graveyardBarLifestyle,
     gallery: [graveyardBarImg, graveyardBarLifestyle, graveyardBarSide, graveyardBarMacro],
-    description: "Some shifts end when the sun comes up. The Graveyard is our heaviest bar. Activated charcoal top to bottom — no white layer, no half measures. Goat's milk underneath so it pulls the day off without pulling your skin apart. Built for the nights nobody sees. Clock out clean.",
-    fullDetails: "Handmade cold-process goat's milk soap. Activated charcoal, full bar. Added sea salt. Built for the nights nobody sees. Concentrated activated charcoal runs top to bottom, while goat's milk supports a comfortable post-shift wash.",
+    description: "Some shifts end when the sun comes up. The Graveyard is the heaviest UNDA concept: charcoal from top to bottom, backed by goat’s milk and added sea salt. Built for the nights nobody sees. Clock out clean.",
+    fullDetails: "A full-charcoal goat’s milk bar concept with added sea salt, built for the nights nobody sees. The formula is being field tested for a strong scrub with a comfortable post-shift feel. Complete ingredients, net weight, and final directions will publish before launch.",
     keyBenefits: [
       'Full charcoal top to bottom — no white layer, no half measures',
-      'Goat’s milk underneath pulls the day off without pulling your skin apart',
-      'Added sea salt creates aggressive abrasive friction for heavy grease & carbon',
+      'Goat’s milk is included to support a creamy lather and comfortable wash',
+      'Added sea salt creates the strongest physical scrub in the planned lineup',
       'Built for midnight shifts, asphalt paving, diesel rebuilds, and ironwork',
       'Refreshing natural eucalyptus & spearmint essential oils'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
-      'Farm-Fresh Goat’s Milk',
+      'Goat’s Milk',
       'Activated Charcoal (Full Bar Concentration)',
       'Added Sea Salt',
       'Eucalyptus Essential Oil',
       'Spearmint Essential Oil'
     ],
     tradeSuitability: ['Midnight Shift Crews', 'Diesel & Heavy Equipment Techs', 'Foundry & Structural Ironworkers', 'Asphalt & Oil Field Crews'],
-    howToUse: 'Lather between wet hands. Scrub forearms, neck, face, and body after heavy shifts. Rinses away completely clean with zero residue.',
+    howToUse: 'Planned for hands and body after heavy shifts. Lather between wet hands, wash without excessive pressure, and rinse thoroughly. Avoid the face and irritated or broken skin until final directions are published.',
     inStock: true,
     featured: true,
     isDarkCard: true,
@@ -216,7 +216,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'the-recharge',
     name: 'The Recharge',
-    tagline: 'Goat’s Milk & Sea Salt Daily Skin Restorer',
+    tagline: 'Goat’s Milk & Sea Salt Daily Wash',
     category: 'daily-restore',
     categoryLabel: 'Daily Restore',
     price: 12,
@@ -228,16 +228,16 @@ export const PRODUCTS: Product[] = [
     secondaryImage: rechargeBarLifestyle,
     gallery: [rechargeBarImg, rechargeBarLifestyle, rechargeBarSide, rechargeBarMacro],
     description: 'More than a hand bar. Rich goat’s milk and sea salt leave your skin clean, refreshed, and restored.',
-    fullDetails: 'A daily cold-process full-body bar with goat’s milk, sea salt, eucalyptus and spearmint among its formula highlights. Designed for a thick, creamy lather and a clean, comfortable post-shift feel. The full ingredient declaration will be published when the production formula is finalized.',
+    fullDetails: 'A daily full-body bar concept with goat’s milk, sea salt, eucalyptus, and spearmint among its formula highlights. It is being developed for a thick, creamy lather and a clean, comfortable post-shift feel. The complete ingredient declaration, production method, net weight, and final directions will publish before launch.',
     keyBenefits: [
       'Ultra-creamy, comforting full-body shower lather',
       'Goat’s milk supports a rich, creamy daily lather',
-      'Gentle sea salt mineral cleansing with zero artificial perfumes',
-      'Revitalizing eucalyptus & spearmint aroma clears the head post-shift'
+      'Sea salt is being evaluated for mild physical texture',
+      'Eucalyptus and spearmint are the planned scent direction'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],
     ingredients: [
-      'Farm-Fresh Goat’s Milk',
+      'Goat’s Milk',
       'Sea Salt',
       'Eucalyptus Essential Oil',
       'Spearmint Essential Oil'
@@ -265,12 +265,12 @@ export const PRODUCTS: Product[] = [
     image: theCycleImg,
     gallery: [theCycleImg, theCycleOpenImg],
     description: 'The two middle moves in the UNDA rhythm: Reset the grime, Recharge the skin, and get ready to repeat.',
-    fullDetails: 'The Cycle is a focused two-bar system built around the core UNDA routine. The Reset strips away the weight of the shift with activated charcoal, goat’s milk, and sea salt. The Recharge follows with a creamy goat’s milk and sea salt lather that leaves skin ready for whatever comes next. No pouch, no filler, and no duplicate bars—just the everyday Reset-and-Recharge combination in its own compact package.',
+    fullDetails: 'The Cycle is a focused two-bar concept built around the core UNDA routine. The Reset is designed for the dirtier shift with activated charcoal, goat’s milk, and sea salt. The Recharge follows as the daily bar concept with a creamy goat’s milk and sea salt lather. No pouch, no filler, and no duplicate bars—just the planned Reset-and-Recharge combination in a compact package.',
     keyBenefits: [
       'Contents: 1x The Reset and 1x The Recharge',
       'A simple post-shift and next-shift two-step routine',
-      'The Reset handles embedded grime, grease, soot, and sweat',
-      'The Recharge restores a clean, comfortable skin feel for daily use',
+      'The Reset is positioned for the dirtier post-shift wash',
+      'The Recharge is positioned for a clean, comfortable daily wash',
       'Compact two-bar package with no accessories or unnecessary extras'
     ],
     scentNotes: ['Eucalyptus', 'Spearmint'],

@@ -63,7 +63,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
               Pick Your Bar or Bundle
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 font-semibold max-w-xl mt-2">
-              Every bar is cold-processed and formulated around a specific place in the shift cycle.
+              Every bar concept is being developed around a specific place in the shift cycle. Final manufacturing and ingredient details will publish before ordering opens.
             </p>
           </div>
 
@@ -208,7 +208,7 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
         <div className="mb-6 flex items-center justify-between pb-3 border-b-2 border-neutral-200">
           <div>
             <span className="text-[11px] font-mono font-black uppercase text-[#a97e45] tracking-widest block">
-              Cold-Processed Bars & Bundle Systems
+              Prelaunch Bars & Bundle Systems
             </span>
             <h3 className="text-lg sm:text-xl font-display font-black text-black uppercase">
               Full Workshop Lineup ({sortedProducts.length} Items)

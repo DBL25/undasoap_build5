@@ -93,7 +93,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <span className="text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#a97e45]">
               {product.categoryLabel}
             </span>
-            <span className={`text-[10px] font-mono font-black uppercase ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>Cold Process</span>
+            <span className={`text-[10px] font-mono font-black uppercase ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>Prelaunch Formula</span>
           </div>
 
           {/* Product Name */}

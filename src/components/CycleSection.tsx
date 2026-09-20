@@ -30,8 +30,8 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
       title: 'Recharge',
       subtitle: 'Daily Skin Restoration',
       icon: ShieldCheck,
-      summary: 'Raw goat milk and sea salt. Leaves you feeling refreshed.',
-      detail: 'Rich fresh goat’s milk and sea salt create a thick, comforting full-body shower lather. Leaves your skin feeling clean, calm, and deeply refreshed so you feel ready for whatever comes next.'
+      summary: 'Goat’s milk and sea salt highlights for the daily wash.',
+      detail: 'The Recharge formula concept pairs goat’s milk and sea salt for a creamy full-body lather and a clean, comfortable post-shift feel.'
     },
     {
       num: '04',
@@ -39,7 +39,7 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
       subtitle: 'Zero Downtime',
       icon: RefreshCw,
       summary: 'Tomorrow, same grind. Never run out.',
-      detail: 'Keep your supply locked in on subscription and start every shift feeling clean, ready, and dialed in.'
+      detail: 'Shift Supply recurring delivery is being designed for launch. Join the roster to help choose the delivery rhythm and hear when enrollment opens.'
     }
   ];
 

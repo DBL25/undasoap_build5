@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
+import { NewsletterForm } from './NewsletterForm';
 
 interface FooterProps {
   onOpenQuiz: () => void;
@@ -31,15 +32,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
               New small-batch cures, production updates, and launch news. Zero fluff, just soap.
             </p>
 
-            <div className="p-4 bg-black text-white border-2 border-black space-y-3 max-w-md mx-auto">
+            <div className="p-4 bg-black text-white border-2 border-black space-y-3 max-w-lg mx-auto">
               <div className="text-sm font-black text-[#c69a5f] uppercase tracking-wider">Prelaunch Workshop</div>
               <p className="text-xs font-mono text-neutral-300">Ordering and payment are not open yet. Join the launch list and we’ll let you know when the first batch drops.</p>
-              <a
-                href="mailto:crew@undasoap.com?subject=Add%20me%20to%20the%20UNDA%20launch%20list"
-                className="inline-flex items-center justify-center bg-[#c69a5f] text-black px-5 py-3 border-2 border-[#c69a5f] text-xs font-black uppercase tracking-widest hover:bg-white hover:border-white transition-colors"
-              >
-                Join The Launch List
-              </a>
+              <NewsletterForm source="storefront-footer" compact />
             </div>
           </div>
         </div>
@@ -59,12 +55,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
               </div>
             </div>
             <p className="text-xs text-neutral-400 font-medium leading-relaxed">
-              Nature’s answer to dirty work. Handmade small-batch goat’s milk and activated charcoal soap, crafted in the USA for hard-working tradesmen.
+              Nature’s answer to dirty work. A small-batch soap system in development for hard-working tradespeople.
             </p>
             <div className="text-[11px] font-mono text-[#c69a5f] font-bold">
-              • Small-Batch Cold Process<br/>
-              • Goat’s Milk + Charcoal<br/>
-              • Biodegradable Packaging
+              • Small-Batch Development<br/>
+              • Goat’s Milk + Charcoal Highlights<br/>
+              • Final Formula Details Coming
             </div>
           </div>
 
@@ -144,6 +140,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
                   Support: crew@undasoap.com
                 </a>
               </li>
+              <li className="pt-2 flex flex-col items-start gap-1.5">
+                <a href="/policies/shipping" className="text-neutral-400 hover:text-[#c69a5f]">Shipping Policy</a>
+                <a href="/policies/returns" className="text-neutral-400 hover:text-[#c69a5f]">Returns & Refunds</a>
+                <a href="/policies/privacy" className="text-neutral-400 hover:text-[#c69a5f]">Privacy Notice</a>
+                <a href="/policies/terms" className="text-neutral-400 hover:text-[#c69a5f]">Website Terms</a>
+                <a href="/policies/faq" className="text-neutral-400 hover:text-[#c69a5f]">FAQ</a>
+              </li>
             </ul>
           </div>
 
@@ -165,7 +168,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
             © {new Date().getFullYear()} UNDA Soap Works. All rights reserved. Nature’s Answer to Dirty Work.
           </div>
           <div className="flex items-center gap-4">
-            <span>Handmade in Small Batches</span>
+            <span>First Batch In Development</span>
             <span>•</span>
             <span className="text-neutral-400">Crafted by Designs by Luck</span>
           </div>

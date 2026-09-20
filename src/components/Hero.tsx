@@ -9,7 +9,7 @@ interface HeroProps {
   onQuizClick: () => void;
 }
 
-const HERO_VIDEO = '/videos/unda-hero-bkgd.mp4';
+const HERO_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_34LLEgr7pvzRMLumexJvhY4VUo0/8c11808f-e16f-4f56-bc01-b5d5749e6f16.mp4';
 
 export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           disablePictureInPicture
           aria-hidden="true"
           onError={() => setVideoFailed(true)}
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
           <UndaLogo className="w-full h-full text-white" variant="light" />
         </div>
         <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.2em] font-extrabold text-black/80">Batch No. 84</div>
+          <div className="text-[10px] font-mono uppercase tracking-[0.2em] font-extrabold text-black/80">Field Formula 01</div>
           <div className="text-sm sm:text-base font-black tracking-tight font-display">UNDA • SMALL BATCH</div>
         </div>
       </div>
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
           </p>
 
           <p className="text-sm sm:text-base text-neutral-300 font-medium max-w-lg mb-10 leading-relaxed">
-            More than a hand bar — built for full-body post-shift showers. Cuts grease without stripping skin.
+            More than a hand bar—built around the full-body post-shift shower. Final formulas are now being field tested.
           </p>
 
           {/* Call to Action Buttons */}
@@ -148,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/15">
             <div className="flex items-center gap-2.5 text-white/90">
               <CheckCircle2 className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">Raw Goat Milk Base</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Goat’s Milk Highlight</span>
             </div>
             <div className="flex items-center gap-2.5 text-white/90">
               <Flame className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
@@ -156,7 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopClick, onQuizClick }) => {
             </div>
             <div className="flex items-center gap-2.5 text-white/90">
               <Droplets className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />
-              <span className="text-xs font-bold uppercase tracking-wider">Cold-Process Method</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Formula In Development</span>
             </div>
             <div className="flex items-center gap-2.5 text-white/90">
               <ShieldCheck className="w-4 h-4 text-[#c69a5f] flex-shrink-0" />

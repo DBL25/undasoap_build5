@@ -199,7 +199,7 @@ function calculateRoutine(
     return {
       name: 'The Graveyard Rotation',
       mixShort: '1x Graveyard + 1x Reset + 1x Recharge',
-      tagline: 'Night shift charcoal power, workshop grit cutter, and daily skin restorer.',
+      tagline: 'Night-shift charcoal, workshop grit, and a daily wash concept.',
       description: 'One bar of each formulation dialed for overnight shifts: heavy charcoal on standby, daily grit cutting, and gentle restorative goat milk.',
       bars,
       packOption: {
