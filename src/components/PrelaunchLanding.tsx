@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, LockKeyhole, Mail, PlayCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Clapperboard, LockKeyhole, Mail, ShieldCheck } from 'lucide-react';
 import { UndaLogo } from './UndaLogo';
 import { NewsletterForm } from './NewsletterForm';
 import fullShiftImage from '../assets/images/full-shift-wet-counter.webp';
@@ -59,25 +59,22 @@ export const PrelaunchLanding: React.FC = () => {
         <section className="bg-[#c69a5f] text-black py-16 sm:py-20 border-b-4 border-black" id="film">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
             <div>
-              <div className="text-[10px] font-mono font-black uppercase tracking-[0.24em] mb-3">The UNDA Film</div>
-              <h2 className="text-4xl sm:text-5xl font-display uppercase leading-none mb-5">Clock Out Clean.</h2>
+              <div className="text-[10px] font-mono font-black uppercase tracking-[0.24em] mb-3">The Next UNDA Film</div>
+              <h2 className="text-4xl sm:text-5xl font-display uppercase leading-none mb-5">Something Deeper Is Coming.</h2>
               <p className="text-sm font-bold leading-relaxed max-w-md">
-                Not spa-day soap. A direct, visual introduction to what UNDA is building for real shifts and real grime.
+                A new visual introduction to UNDA is in production. The film will return here when the next cut is ready.
               </p>
               <div className="flex items-center gap-2 mt-6 text-xs font-black uppercase tracking-widest">
-                <PlayCircle className="w-5 h-5" /> 15-second brand cut
+                <Clapperboard className="w-5 h-5" /> New film in production
               </div>
             </div>
-            <div className="border-4 border-black bg-black shadow-[8px_8px_0_#fff] overflow-hidden aspect-video">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                playsInline
-                preload="metadata"
-                poster={fullShiftImage}
-              >
-                <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_34LLEgr7pvzRMLumexJvhY4VUo0/22d41034-c4de-4817-ae0f-a3aeca9af4e2.mp4" type="video/mp4" />
-              </video>
+            <div className="relative border-4 border-black bg-[#0a0a0a] shadow-[8px_8px_0_#fff] overflow-hidden aspect-video flex items-center justify-center">
+              <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,_#c69a5f_0,_transparent_62%)]" />
+              <div className="relative text-center px-6">
+                <UndaLogo className="w-24 h-24 sm:w-32 sm:h-32 text-white mx-auto mb-5" variant="light" />
+                <div className="font-display text-2xl sm:text-4xl uppercase tracking-wide text-white">New Film Coming Soon</div>
+                <div className="mt-3 text-[10px] sm:text-xs font-mono font-black uppercase tracking-[0.24em] text-[#c69a5f]">The screen stays ready</div>
+              </div>
             </div>
           </div>
         </section>
