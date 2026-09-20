@@ -21,9 +21,14 @@ import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
 // Bundle systems
 import theRotationImg from '../assets/images/the-rotation-wet-counter.webp';
 import theRotationKitImg from '../assets/images/full-shift-wet-counter.webp';
+import fullShiftDetailImg from '../assets/images/full-shift-detail.webp';
+import fullShiftAccessoriesImg from '../assets/images/full-shift-accessories.webp';
+import fullShiftLineupImg from '../assets/images/full-shift-lineup.webp';
+import rotationLifestyleImg from '../assets/images/Rotation-lifestyle.webp';
+import rotationSideImg from '../assets/images/Rotation-side.webp';
+import rotationMacroImg from '../assets/images/Rotation-macro.webp';
 import theCycleImg from '../assets/images/the-cycle-wet-counter.webp';
 import theCycleOpenImg from '../assets/images/the-cycle-open-hero.webp';
-import theCycleOverheadImg from '../assets/images/the-cycle-overhead.webp';
 
 export const HERO_WORDS: string[] = [
   'something',
@@ -62,6 +67,7 @@ export const PRODUCTS: Product[] = [
     gritLevel: 5,
     gritDescription: 'The Flagship Box: 3 Full Bars + Exclusive Black Mesh Pouch + Manifesto Card',
     image: theRotationKitImg,
+    gallery: [theRotationKitImg, fullShiftDetailImg, fullShiftAccessoriesImg, fullShiftLineupImg],
     description: 'The flagship boxed kit: The Reset, The Recharge, The Graveyard, the kit-exclusive black mesh exfoliating pouch, and the UNDA manifesto card in a complete kraft presentation box.',
     fullDetails: 'The complete UNDA system for trade life. The Full Shift contains all three signature cold-process bars, the heavy-duty black mesh exfoliating pouch available exclusively inside this kit, the UNDA manifesto card, and the complete printed kraft presentation box. Contents: 1x The Reset, 1x The Recharge, 1x The Graveyard, 1x exclusive Black Mesh Exfoliating Soap Pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, coarse sea salt, and refreshing eucalyptus & spearmint essential oils.',
     keyBenefits: [
@@ -100,7 +106,8 @@ export const PRODUCTS: Product[] = [
     gritLevel: 5,
     gritDescription: 'Complete 3-Bar Lineup (Reset, Recharge & Graveyard)',
     image: theRotationImg,
-    secondaryImage: graveyardBarImg,
+    secondaryImage: rotationLifestyleImg,
+    gallery: [theRotationImg, rotationLifestyleImg, rotationSideImg, rotationMacroImg],
     description: 'Reset. Recharge. Graveyard. The full lineup for the full week — day shift, second half, and the nights nobody sees. Build your own custom 3-bar mix through Find My Routine at the same price.',
     fullDetails: 'The complete 3-bar rotation built for the entire work week. Contents: 1x The Reset (activated charcoal and goat’s milk grime cutter), 1x The Recharge (creamy goat’s milk and sea salt daily bar), and 1x The Graveyard (full-charcoal heavy hitter). Customers can also tailor a custom 3-bar mix through Find My Routine for the same $28 price. Formula highlights include goat’s milk, activated charcoal, sea salt, eucalyptus and spearmint.',
     keyBenefits: [
@@ -256,7 +263,7 @@ export const PRODUCTS: Product[] = [
     gritLevel: 5,
     gritDescription: 'Two-Step Routine: Heavy Reset + Daily Recharge',
     image: theCycleImg,
-    gallery: [theCycleImg, theCycleOpenImg, theCycleOverheadImg, resetBarImg, rechargeBarImg],
+    gallery: [theCycleImg, theCycleOpenImg],
     description: 'The two middle moves in the UNDA rhythm: Reset the grime, Recharge the skin, and get ready to repeat.',
     fullDetails: 'The Cycle is a focused two-bar system built around the core UNDA routine. The Reset strips away the weight of the shift with activated charcoal, goat’s milk, and sea salt. The Recharge follows with a creamy goat’s milk and sea salt lather that leaves skin ready for whatever comes next. No pouch, no filler, and no duplicate bars—just the everyday Reset-and-Recharge combination in its own compact package.',
     keyBenefits: [

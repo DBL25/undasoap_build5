@@ -15,15 +15,15 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
       subtitle: 'The Shift Begins',
       icon: Flame,
       summary: "The world puts something on you. That's the job.",
-      detail: 'Diesel exhaust, hydraulic fluid, wet lime mortar, carbon spatter, and iron filings coat your epidermis. Standard liquid hand soaps contain artificial surfactants that break surface tension but push micro-particles deeper into pore crevices.'
+      detail: 'Diesel soot, hydraulic fluid, wet mortar, metal dust, sweat, and shop grime build up through the shift. UNDA is made for the full-body wash that follows.'
     },
     {
       num: '02',
       title: 'Reset',
-      subtitle: 'Deep Toxin Extraction',
+      subtitle: 'Heavy Grime Reset',
       icon: Droplets,
-      summary: 'Activated charcoal pulls it out. Clean, actually clean.',
-      detail: 'Formulated with food-grade bamboo charcoal with over 1,000 m²/g surface area to bind to heavy petroleum hydrocarbons. Natural goat milk lactic acid gently loosens dead skin bonds without requiring harsh chemical solvents.'
+      summary: 'Activated charcoal and sea salt take on the visible grime.',
+      detail: 'The Reset combines activated charcoal, goat’s milk, and sea salt for a satisfying scrub and a dense post-shift lather—without turning the shower into a chemistry lesson.'
     },
     {
       num: '03',
@@ -57,7 +57,7 @@ export const CycleSection: React.FC<CycleSectionProps> = ({ onShopKit }) => {
             Grind. Reset. Recharge. Repeat.
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 font-semibold max-w-2xl">
-            Not a luxury spa routine — a heavy-duty biological maintenance cycle engineered for industrial trades.
+            Not a luxury spa routine — a straightforward wash cycle built around dirty shifts and everyday recovery.
           </p>
         </div>
 

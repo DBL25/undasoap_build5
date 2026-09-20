@@ -31,9 +31,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
               New small-batch cures, production updates, and launch news. Zero fluff, just soap.
             </p>
 
-            <div className="p-4 bg-black text-white border-2 border-black space-y-1 max-w-md mx-auto">
-              <div className="text-sm font-black text-[#c69a5f] uppercase tracking-wider">Launch Updates Coming Soon</div>
-              <p className="text-xs font-mono text-neutral-300">The workshop roster opens when the storefront is ready to accept real orders.</p>
+            <div className="p-4 bg-black text-white border-2 border-black space-y-3 max-w-md mx-auto">
+              <div className="text-sm font-black text-[#c69a5f] uppercase tracking-wider">Prelaunch Workshop</div>
+              <p className="text-xs font-mono text-neutral-300">Ordering and payment are not open yet. Join the launch list and we’ll let you know when the first batch drops.</p>
+              <a
+                href="mailto:crew@undasoap.com?subject=Add%20me%20to%20the%20UNDA%20launch%20list"
+                className="inline-flex items-center justify-center bg-[#c69a5f] text-black px-5 py-3 border-2 border-[#c69a5f] text-xs font-black uppercase tracking-widest hover:bg-white hover:border-white transition-colors"
+              >
+                Join The Launch List
+              </a>
             </div>
           </div>
         </div>
@@ -133,8 +139,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuiz }) => {
               <li className="text-neutral-400">
                 Same Underneath. Built for the Shift.
               </li>
-              <li className="text-neutral-400">
-                Support: crew@undasoap.com
+              <li>
+                <a href="mailto:crew@undasoap.com" className="text-neutral-400 hover:text-[#c69a5f] transition-colors">
+                  Support: crew@undasoap.com
+                </a>
               </li>
             </ul>
           </div>
