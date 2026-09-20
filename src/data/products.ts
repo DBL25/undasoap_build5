@@ -20,7 +20,7 @@ import graveyardBarMacro from '../assets/images/Graveyard-macro.png';
 
 // Bundle systems
 import theRotationImg from '../assets/images/the-rotation-wet-counter.webp';
-import theRotationKitImg from '../assets/images/full-shift-wet-counter.webp';
+import fullShiftKitImg from '../assets/images/full-shift-hero-2.png';
 import fullShiftDetailImg from '../assets/images/full-shift-detail.webp';
 import fullShiftAccessoriesImg from '../assets/images/full-shift-accessories.webp';
 import fullShiftLineupImg from '../assets/images/full-shift-lineup.webp';
@@ -66,8 +66,8 @@ export const PRODUCTS: Product[] = [
     ribbon: 'Flagship Boxed Kit',
     gritLevel: 5,
     gritDescription: 'The Flagship Box: 3 Full Bars + Exclusive Black Mesh Pouch + Manifesto Card',
-    image: theRotationKitImg,
-    gallery: [theRotationKitImg, fullShiftDetailImg, fullShiftAccessoriesImg, fullShiftLineupImg],
+    image: fullShiftKitImg,
+    gallery: [fullShiftKitImg, fullShiftDetailImg, fullShiftAccessoriesImg, fullShiftLineupImg],
     description: 'The flagship boxed kit: The Reset, The Recharge, The Graveyard, the kit-exclusive black mesh exfoliating pouch, and the UNDA manifesto card in a complete kraft presentation box.',
     fullDetails: 'The complete UNDA system for trade life. The Full Shift contains all three signature cold-process bars, the heavy-duty black mesh exfoliating pouch available exclusively inside this kit, the UNDA manifesto card, and the complete printed kraft presentation box. Contents: 1x The Reset, 1x The Recharge, 1x The Graveyard, 1x exclusive Black Mesh Exfoliating Soap Pouch with locking drawstring, and 1x UNDA Workshop Manifesto Card. Handmade cold-process soap with farm-fresh goat’s milk, pure activated charcoal, coarse sea salt, and refreshing eucalyptus & spearmint essential oils.',
     keyBenefits: [
